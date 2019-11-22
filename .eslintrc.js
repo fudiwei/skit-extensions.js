@@ -11,7 +11,10 @@ module.exports = {
         'amd': true
     },
     'globals': {
-        'wx': true
+        'wx': true,
+        'my': true,
+        'swan': true,
+        'tt': true
     },
     'parserOptions': {
         'ecmaVersion': 6
