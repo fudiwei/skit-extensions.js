@@ -10,6 +10,7 @@ import UtilsRegex from "./utils-regex";
 import UtilsStorage from "./utils-storage";
 import UtilsRequest from "./utils-request";
 
+// @ts-ignore
 export default {
   /**
    * 类型判断工具类。
