@@ -8,18 +8,18 @@ export interface Base64EncodingUtilConstructor<
    * @param {String} str 待 Base64 编码的字符串。
    * @return {String}
    */
-  encode(str: String): String;
+  encode(str: string): string;
 
   /**
    * Base64 解码。
    * @param {String} str Base64 编码后的字符串。
    * @return {String}
    */
-  decode(str: String): String;
+  decode(str: string): string;
 }
 
 export interface GuidEncodingUtil extends EncodingUtil {
-  toString(format?: String): String;
+  toString(format?: string): string;
 }
 
 export interface GuidEncodingUtilConstructor<

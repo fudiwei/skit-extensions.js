@@ -10,7 +10,7 @@ declare global {
      * @param {Boolean} options.ignoreCase 是否忽略大小写（默认值 false）。
      * @returns {Boolean}
      */
-    equals(str1: String, str2: String, options?: any): Boolean;
+    equals(str1: string, str2: string, options?: any): boolean;
   }
 
   interface String {
@@ -21,7 +21,7 @@ declare global {
      * @param {Boolean} options.ignoreCase 是否忽略大小写（默认值 false）。
      * @returns {Boolean}
      */
-    equals(str: String, options?: any): Boolean;
+    equals(str: string, options?: any): boolean;
 
     /**
      * 返回一个替换所有待替换值的新字符串。
@@ -29,6 +29,6 @@ declare global {
      * @param {String} replacement 替换后的新字符串。
      * @returns {String}
      */
-    replaceAll(substr: String, replacement?: String): String;
+    replaceAll(substr: string, replacement?: string): string;
   }
 }
