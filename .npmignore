@@ -3,7 +3,3 @@
 .eslintrc.js
 
 gulpfile.js
-
-/src
-/test
-/doc

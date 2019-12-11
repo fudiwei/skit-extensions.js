@@ -68,11 +68,6 @@
         PREFIX_Boolean = '_b_:',
         PREFIX_String = '_s_:';
 
-    /**
-     * 修改或添加键值对。
-     * @param {String} key
-     * @param {Object} value
-     */
     $.setItem = (key, value) => {
         if (void 0 === value || null === value) {
             Storage.removeItem(key, value);
@@ -91,11 +86,6 @@
         }
     };
 
-    /**
-     * 获取指定键的值。
-     * @param {String} key
-     * @param {Object} defaultVal （可选）当不存在指定键时，返回默认的值。
-     */
     $.getItem = (key, defaultVal) => {
         let value = Storage.getItem(key);
 
@@ -122,25 +112,14 @@
         return value;
     };
 
-    /**
-     * 移除指定键。
-     * @param {String} key
-     */
     $.removeItem = (key) => {
         Storage.removeItem(key);
     };
 
-    /**
-     * 清空所有键值对。
-     */
     $.clear = () => {
         Storage.clear();
     };
 
-    /**
-     * 获取所有键的集合。
-     * @return {Array}
-     */
     $.keys = () => {
         const res = [];
         for (let i = 0, len = Storage.length; i < len; i++) {

@@ -22,66 +22,31 @@
     'use strict';
     const $ = {};
 
-    /**
-     * 验证是否是合法的电子邮箱。
-     * @param {String} value
-     * @return {Boolean}
-     */
-    $.isEmail = (value) => {
-        return /^[0-9a-z][_.0-9a-z-]{0,31}@([0-9a-z][0-9a-z-]{0,30}[0-9a-z]\.){1,4}[a-z]{2,4}$/.test(value);
-    };
-
-    /**
-     * 验证是否是合法的手机号码。
-     * @param {String} value
-     * @return {Boolean}
-     */
-    $.isMobilephone = (value) => {
-        return /^[1][3,4,5,6,7,8,9]\d{9}$/.test(value);
-    };
-
-    /**
-     * 验证是否是合法的QQ号。
-     * @param {String} value
-     * @return {Boolean}
-     */
-    $.isQQ = (value) => {
-        return /^\d{5,10}$/.test(value);
-    };
-
-    /**
-     * 验证是否是合法的微信号。
-     * @param {String} value
-     * @return {Boolean}
-     */
-    $.isWechat = (value) => {
-        return /^[a-zA-Z]{1}[-_a-zA-Z\d]{5,19}$/.test(value);
-    };
-
-    /**
-     * 验证是否是数字。
-     * @param {String} value
-     * @return {Boolean}
-     */
     $.isNumeric = (value) => {
         return /^[+-]?\d*[.]?\d*$/.test(value);
     };
 
-    /**
-     * 验证是否是整数。
-     * @param {String} value
-     * @return {Boolean}
-     */
-    $.isInt = (value) => {
+    $.isIntegerNumeric = (value) => {
         return /^[+-]?\d*$/.test(value);
     };
 
-    /**
-     * 验证是否是合法的15/18位身份证号。
-     * @param {String} value
-     * @return {Boolean}
-     */
-    $.isIDNumber = (value) => {
+    $.isEmail = (value) => {
+        return /^[0-9a-z][_.0-9a-z-]{0,31}@([0-9a-z][0-9a-z-]{0,30}[0-9a-z]\.){1,4}[a-z]{2,4}$/.test(value);
+    };
+
+    $.isMobilephone = (value) => {
+        return /^[1][3,4,5,6,7,8,9]\d{9}$/.test(value);
+    };
+
+    $.isQQNumber = (value) => {
+        return /^\d{5,10}$/.test(value);
+    };
+
+    $.isWechatNumber = (value) => {
+        return /^[a-zA-Z]{1}[-_a-zA-Z\d]{5,19}$/.test(value);
+    };
+
+    $.isIDCardNumber = (value) => {
         value = String(value);
         if (!/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/.test(value)) {
             return false;
@@ -144,29 +109,6 @@
         }
     };
 
-    /**
-     * 返回URL的各个部分。
-     * @param {String} value
-     * @return {Array}
-     */
-    $.getUrlSegments = (value) => {
-        // 返回的数组一共包含8个部分：
-        // 0 - 完整的url
-        // 1 - 协议
-        // 2 - 域名
-        // 3 - 端口
-        // 4 - 资源路径
-        // 5 - 资源名
-        // 6 - （未知）
-        // 7 - 查询字符串与锚点
-        return String(value).match(/(\w+):\/\/([^:|/]+)(:\d*)?(.*\/)([^#|?|\n]+)?(#.*)?(\?.*)?/i);
-    };
-
-    /**
-     * 将 HTML 的标签过滤，只保留文本。
-     * @param {String} html
-     * @return {String}
-     */
     $.filterHtml = (html) => {
         return String(html || '')
             .replace(/(&quot;)/g, '"')

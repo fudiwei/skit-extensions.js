@@ -181,19 +181,6 @@
             });
         }
 
-        /**
-         * 发起一个请求。
-         * @param {Object} options 参数。
-         * @param {String} options.method （可选）请求谓词（默认值 GET）。
-         * @param {String} options.url （可选）请求相对路径。
-         * @param {String | Object | Array} options.query （可选）请求查询参数。
-         * @param {Object | Array} options.headers （可选）请求头信息（如指定将与全局设置合并）。
-         * @param {String | Object} options.data （可选）请求正文（GET 请求时该设置无效）。
-         * @param {Number} options.timeout （可选）超时时间（单位：毫秒。如指定将覆盖全局设置）。
-         * @param {Boolean} options.withCredentials （可选）是否使用跨域访问控制（如指定将覆盖全局设置）。
-         * @param {Function} options.onDownloadProgress （可选）下载进度回调。
-         * @param {Function} options.onUploadProgress （可选）上传进度回调。
-         */
         request(options = {}) {
             options = {
                 method: String(options.method || 'get').toUpperCase(),
@@ -314,14 +301,6 @@
             }
         }
 
-        /**
-         * 以 GET 方式发起一个下载请求。
-         * @param {Object} options 参数。
-         * @param {String} options.url （可选）请求相对路径。
-         * @param {String | Object | Array} options.query （可选）请求查询参数。
-         * @param {Object | Array} options.headers （可选）请求头信息（如指定将与全局设置合并）。
-         * @param {Function} options.onDownloadProgress （可选）下载进度回调。
-         */
         download(options = {}) {
             options = {
                 method: String(options.method || 'get').toUpperCase(),
@@ -388,17 +367,6 @@
             }
         }
 
-        /**
-         * 以 POST 方式发起一个上传请求。
-         * @param {Object} options 参数。
-         * @param {String} options.url （可选）请求相对路径。
-         * @param {String | Object | Array} options.query （可选）请求查询参数。
-         * @param {Object | Array} options.headers （可选）请求头信息（如指定将与全局设置合并）。
-         * @param {String | Object} options.filePath 要上传文件的路径。
-         * @param {String | Object} options.name 要上传文件的标识。
-         * @param {String | Object} options.data （可选）请求正文。
-         * @param {Function} options.onUploadProgress （可选）上传进度回调。
-         */
         upload(options = {}) {
             options = {
                 method: String(options.method || 'get').toUpperCase(),
@@ -477,94 +445,46 @@
             }
         }
 
-        /**
-         * 发起一个 GET 请求。
-         * @param {Object} options 参数。
-         */
         get(options) {
             return this.request(assignOptions('get', options));
         }
 
-        /**
-         * 发起一个 POST 请求。
-         * @param {Object} options 参数。
-         */
         post(options) {
             return this.request(assignOptions('post', options));
         }
 
-        /**
-         * 发起一个 PUT 请求。
-         * @param {Object} options 参数。
-         */
         put(options) {
             return this.request(assignOptions('put', options));
         }
 
-        /**
-         * 发起一个 PATCH 请求。
-         * @param {Object} options 参数。
-         */
         patch(options) {
             return this.request(assignOptions('patch', options));
         }
 
-        /**
-         * 发起一个 DELETE 请求。
-         * @param {Object} options 参数。
-         */
         delete(options) {
             return this.request(assignOptions('delete', options));
         }
 
-        /**
-         * 创建一个请求器。
-         * @param {Object} config 配置。
-         * @param {String} config.baseUrl （可选）请求基地址。
-         * @param {Object} config.headers （可选）请求头信息。
-         * @param {Number} config.timeout （可选）超时时间（单位：毫秒。默认值 30000）。
-         * @param {Boolean} config.withCredentials （可选）是否使用跨域访问控制（默认值 false）。
-         */
         static create(config = {}) {
             return new RequestFactory(config);
         }
 
-        /**
-         * 使用默认配置发起一个 GET 请求。
-         * @param {Object} options 参数。
-         */
         static get(options) {
             return this.create().request(assignOptions('get', options));
         }
 
-        /**
-         * 使用默认配置发起一个 POST 请求。
-         * @param {Object} options 参数。
-         */
         static post(options) {
             return this.create().request(assignOptions('post', options));
         }
 
-        /**
-         * 使用默认配置发起一个 PUT 请求。
-         * @param {Object} options 参数。
-         */
         static put(options) {
             return this.create().request(assignOptions('put', options));
         }
 
-        /**
-         * 使用默认配置发起一个 PATCH 请求。
-         * @param {Object} options 参数。
-         */
         static patch(options) {
             return this.create().request(assignOptions('patch', options));
         }
 
-        /**
-         * 使用默认配置发起一个 DELETE 请求。
-         * @param {Object} options 参数。
-         */
         static delete(options) {
             return this.create().request(assignOptions('delete', options));
         }

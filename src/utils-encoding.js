@@ -23,12 +23,7 @@
     const $ = {};
 
     $.base64 = {
-        /**
-         * Base64 编码。
-         * @param {String} str
-         * @return {String}
-         */
-        encode(str) {
+        encode(str = '') {
             if (undefined === str)
                 throw '1 argument required, but only 0 present.';
 
@@ -76,12 +71,7 @@
             return output;
         },
 
-        /**
-         * Base64 解码。
-         * @param {String} str
-         * @return {String}
-         */
-        decode(str) {
+        decode(str = '') {
             if (undefined === str)
                 throw '1 argument required, but only 0 present.';
 
@@ -138,10 +128,6 @@
     };
 
     $.guid = {
-        /**
-         * 生成一个 GUID。
-         * @return {String}
-         */
         create() {
             class Guid {
                 constructor() {

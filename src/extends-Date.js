@@ -8,23 +8,12 @@
         systemLanguage = (navigator.languages && navigator.languages[0]) || navigator.language;
     }
 
-    /**
-     * 获取当前日期。
-     * @returns {Date}
-     */
-    Date.today = function () {
+    Date.today = function() {
         const date = new Date();
         return new Date(date.getFullYear(), date.getMonth(), date.getDate());
     };
 
-    /**
-     * 将该日期对象转化为指定格式的字符串。
-     * 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
-     * 年(y)可以用 1-4个占位符，毫秒(f)只能用 1个占位符(是 1-3位的数字)。
-     * @param {String} format 例："yyyy-MM-dd hh:mm:ss.fff"。
-     * @returns {String}
-     */
-    Date.prototype.toFormattedString = function (format) {
+    Date.prototype.toFormattedString = function(format) {
         const O = {
             "M+": this.getMonth() + 1,
             "d+": this.getDate(),
@@ -46,62 +35,38 @@
         return format;
     };
 
-    /**
-     * 判断该日期对象指示的日期是否是周末。
-     * @returns {Boolean}
-     */
-    Date.prototype.isWeekend = function () {
+    Date.prototype.isWeekend = function() {
         return this.getDay() % 7 === 0 || this.getDay() % 7 === 6;
     };
 
-    /**
-     * 判断该日期对象指示的日期是否是今天。
-     * @returns {Boolean}
-     */
-    Date.prototype.isToday = function () {
+    Date.prototype.isToday = function() {
         const now = new Date();
         return this.getFullYear() === now.getFullYear() && this.getMonth() === now.getMonth() && this.getDate() === now.getDate();
     };
 
-    /**
-     * 以 Unix 时间戳设置 Date 对象，并返回计算时区偏移量后的本地时间。
-     * @param {Number} timestamp Unix 时间戳。
-     * @param {Number} timezone 时间戳来源的时区（-12 ~ 12，默认值为表示东八区的 8）。
-     * @return {Date}
-     */
-    Date.prototype.setUnixTimestamp = function (timestamp, timezone = 8) {
+    Date.prototype.setUnixTimestamp = function(timestamp, timezone = 8) {
         if (isNaN(timestamp)) {
             throw 'Timestamp must be a number.';
         }
         if (timezone < -12 || timezone > 12) {
             throw 'Timezone must be a number between -12 to 12.';
         }
-    
+
         const date = new Date(timestamp * 1000);
         this.setTime(date.getTime() + (parseInt(timezone) * 60 + date.getTimezoneOffset()) * 60000);
         return this;
     };
 
-    /**
-     * 返回 Date 对象计算时区偏移量后的 Unix 时间戳。
-     * @param {Number} timezone 时间戳目标的时区（-12 ~ 12，默认值为表示东八区的 8）。
-     * @return {Number}
-     */
-    Date.prototype.getUnixTimestamp = function (timezone = 8) {
+    Date.prototype.getUnixTimestamp = function(timezone = 8) {
         if (timezone < -12 || timezone > 12) {
             throw 'Timezone must be a number between -12 to 12.';
         }
-    
+
         const millistamp = this.getTime() - (parseInt(timezone) * 60 + this.getTimezoneOffset()) * 60000;
         return parseInt(millistamp / 1000);
     };
 
-    /**
-     * 返回该日期对象星期部分的字符串，该字符串格式因不同语言而不同。
-     * @param {String} locale 指定使用哪种语言格式化规则，遵循 BCP-47 规则。
-     * @returns {String}
-     */
-    Date.prototype.toLocaleDayString = function (locale) {
+    Date.prototype.toLocaleDayString = function(locale) {
         const day = this.getDay();
         const lang = String(locale || systemLanguage || '').toLowerCase();
         if (lang.startsWith('zh')) {
@@ -127,12 +92,7 @@
         }
     };
 
-    /**
-     * 返回该日期对象星期部分的缩写字符串，该字符串格式因不同语言而不同。
-     * @param {String} locale 指定使用哪种语言格式化规则，遵循 BCP-47 规则。
-     * @returns {String}
-     */
-    Date.prototype.toLocaleShortDayString = function (locale) {
+    Date.prototype.toLocaleShortDayString = function(locale) {
         const day = this.getDay();
         const lang = String(locale || systemLanguage || '').toLowerCase();
         if (lang.startsWith('zh')) {
@@ -158,12 +118,7 @@
         }
     };
 
-    /**
-     * 返回该日期对象月份部分的字符串，该字符串格式因不同语言而不同。
-     * @param {String} locale 指定使用哪种语言格式化规则，遵循 BCP-47 规则。
-     * @returns {String}
-     */
-    Date.prototype.toLocaleMonthString = function (locale) {
+    Date.prototype.toLocaleMonthString = function(locale) {
         const month = this.getMonth();
         const lang = String(locale || systemLanguage || '').toLowerCase();
         if (lang.startsWith('zh')) {
@@ -189,12 +144,7 @@
         }
     };
 
-    /**
-     * 返回该日期对象月份部分的缩写字符串，该字符串格式因不同语言而不同。
-     * @param {String} locale 指定使用哪种语言格式化规则，遵循 BCP-47 规则。
-     * @returns {String}
-     */
-    Date.prototype.toLocaleShortMonthString = function (locale) {
+    Date.prototype.toLocaleShortMonthString = function(locale) {
         const month = this.getMonth();
         const lang = String(locale || systemLanguage || '').toLowerCase();
         if (lang.startsWith('zh')) {
