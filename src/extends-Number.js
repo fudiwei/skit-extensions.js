@@ -2,13 +2,13 @@
     'use strict';
 
     Number.isNumber = function(val) {
-        if (typeof num === 'number') {
+        if (typeof val === 'number') {
             // Discard Infinity and NaN
-            return num - num === 0;
+            return val - val === 0;
         }
 
-        if (typeof num === 'string' && num.trim() !== '') {
-            return Number.isFinite ? Number.isFinite(+num) : isFinite(+num);
+        if (typeof val === 'string' && val.trim() !== '') {
+            return Number.isFinite ? Number.isFinite(+val) : isFinite(+val);
         }
 
         return false;
