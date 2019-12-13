@@ -1,25 +1,14 @@
 (() => {
     'use strict';
 
-    const isNumber = (val) => {
-        const number = +val;
-
-        if ((number - number) !== 0) {
+    Number.isNumber = function(val) {
+        if (typeof num === 'number') {
             // Discard Infinity and NaN
-            return false;
+            return num - num === 0;
         }
 
-        if (number === val) {
-            return true;
-        }
-
-        if ('string' === typeof val) {
-            // String parsed, both a non-empty whitespace string and an empty string will have been coerced to 0.
-            // If 0 trim the string and see if its empty.
-            if (0 === number && '' === val.trim()) {
-                return false;
-            }
-            return true;
+        if (typeof num === 'string' && num.trim() !== '') {
+            return Number.isFinite ? Number.isFinite(+num) : isFinite(+num);
         }
 
         return false;
@@ -38,8 +27,7 @@
     };
 
     Number.prototype.isOdd = function() {
-        /* REF: https://github.com/jonschlinkert/is-odd */
-        if (!isNumber(this)) {
+        if (!Number.isNumber(this)) {
             return false;
         }
         if (Number(this) !== Math.floor(this)) {
@@ -49,8 +37,7 @@
     };
 
     Number.prototype.isEven = function() {
-        /* REF: https://github.com/jonschlinkert/is-odd */
-        if (!isNumber(this)) {
+        if (!Number.isNumber(this)) {
             return false;
         }
         if (Number(this) !== Math.floor(this)) {

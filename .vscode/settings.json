@@ -1,0 +1,11 @@
+{
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"prettier.arrowParens": "always",
+	"prettier.printWidth": 160,
+	"prettier.semi": true,
+	"prettier.singleQuote": true,
+	"prettier.tabWidth": 4
+}
