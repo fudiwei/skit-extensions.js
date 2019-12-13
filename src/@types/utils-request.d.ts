@@ -7,11 +7,11 @@ export namespace STEP.JSUtils {
         /**
          * 获取或设置请求查询参数。
          */
-        query?: string | Array<any> | any;
+        query?: string | { [key: string]: string | number | boolean | null | undefined };
         /**
          * 获取或设置请求标头。
          */
-        headers?: Array<any> | any;
+        headers?: { [key: string]: string };
         /**
          * 获取或设置请求正文。
          */
@@ -53,7 +53,7 @@ export namespace STEP.JSUtils {
         /**
          * 获取或设置响应标头。
          */
-        headers: Array<any> | any;
+        headers: { [key: string]: string };
         /**
          * 获取或设置响应正文。
          */
@@ -77,8 +77,8 @@ export namespace STEP.JSUtils {
          * @param {Object} options 参数。
          * @param {String} options.method （可选）请求谓词（默认值 GET）。
          * @param {String} options.url （可选）请求相对路径。
-         * @param {String | Object | Array} options.query （可选）请求查询参数。
-         * @param {Object | Array} options.headers （可选）请求头信息（如指定将与全局设置合并）。
+         * @param {String | Object} options.query （可选）请求查询参数。
+         * @param {Object} options.headers （可选）请求头信息（如指定将与全局设置合并）。
          * @param {String | Object} options.data （可选）请求正文（GET 请求时该设置无效）。
          * @param {Number} options.timeout （可选）超时时间（单位：毫秒。如指定将覆盖全局设置）。
          * @param {Boolean} options.withCredentials （可选）是否使用跨域访问控制（如指定将覆盖全局设置）。
@@ -91,14 +91,14 @@ export namespace STEP.JSUtils {
          * 以 GET 方式发起一个下载请求。
          * @param {Object} options 参数。
          * @param {String} options.url （可选）请求相对路径。
-         * @param {String | Object | Array} options.query （可选）请求查询参数。
-         * @param {Object | Array} options.headers （可选）请求头信息（如指定将与全局设置合并）。
+         * @param {String | Object} options.query （可选）请求查询参数。
+         * @param {Object} options.headers （可选）请求头信息（如指定将与全局设置合并）。
          * @param {Function} options.onDownloadProgress （可选）下载进度回调。
          */
         download(options?: {
             url?: string;
-            query?: string | Array<any> | any;
-            headers?: Array<any> | any;
+            query?: string | { [key: string]: string | number | boolean | null | undefined };
+            headers?: { [key: string]: string };
             onDownloadProgress?: (e: Progress) => {};
         }): Promise<Response>;
 
@@ -106,8 +106,8 @@ export namespace STEP.JSUtils {
          * 以 POST 方式发起一个上传请求。
          * @param {Object} options 参数。
          * @param {String} options.url （可选）请求相对路径。
-         * @param {String | Object | Array} options.query （可选）请求查询参数。
-         * @param {Object | Array} options.headers （可选）请求头信息（如指定将与全局设置合并）。
+         * @param {String | Object} options.query （可选）请求查询参数。
+         * @param {Object} options.headers （可选）请求头信息（如指定将与全局设置合并）。
          * @param {String | Object} options.filePath 要上传文件的路径。
          * @param {String | Object} options.name 要上传文件的标识。
          * @param {String | Object} options.data （可选）请求正文。
@@ -115,8 +115,8 @@ export namespace STEP.JSUtils {
          */
         upload(options?: {
             url?: string;
-            query?: string | Array<any> | any;
-            headers?: Array<any> | any;
+            query?: string | { [key: string]: string | number | boolean | null | undefined };
+            headers?: { [key: string]: string };
             filePath: string | any;
             name: string | any;
             data?: string | any;
@@ -158,12 +158,17 @@ export namespace STEP.JSUtils {
         /**
          * 创建一个请求器。
          * @param {Object} config 配置。
-         * @param {String} config.baseUrl （可选）请求基地址。
-         * @param {Object} config.headers （可选）请求头信息。
-         * @param {Number} config.timeout （可选）超时时间（单位：毫秒。默认值 30000）。
-         * @param {Boolean} config.withCredentials （可选）是否使用跨域访问控制（默认值 false）。
+         * @param {String} config.baseUrl （可选）基地址。
+         * @param {Object} config.headers （可选）默认请求头信息。
+         * @param {Number} config.timeout （可选）默认超时时间（单位：毫秒。默认值 30000）。
+         * @param {Boolean} config.withCredentials （可选）默认是否使用跨域访问控制（默认值 false）。
          */
-        create(config?: { baseUrl?: string; headers?: Array<any> | any; timeout?: number; withCredentials?: boolean }): RequestUtil;
+        create(config?: {
+            baseUrl?: string;
+            headers?: { [key: string]: string };
+            timeout?: number;
+            withCredentials?: boolean;
+        }): RequestUtil;
 
         /**
          * 使用默认配置发起一个 GET 请求。
