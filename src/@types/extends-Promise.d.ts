@@ -25,5 +25,12 @@ declare global {
          * @returns {Promise}
          */
         sequential(tasks: Array<() => Promise<any>>): Promise<Array<any>>;
+
+        /**
+         * 顺序执行多个 Promise。
+         * @param {Array} promises 待执行的 Promise 数组（需以函数形式包裹、函数的返回值是 Promise）。
+         * @returns {Promise}
+         */
+        sequential<T>(tasks: Array<() => Promise<T>>): Promise<Array<T>>;
     }
 }
