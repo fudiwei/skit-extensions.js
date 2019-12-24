@@ -4,7 +4,9 @@
         const Document = root['Document'];
         const document = root['document'];
 
-        if ('function' === Document && 'object' === document) {
+        const isFunction = (obj) => '[object Function]' === Object.prototype.toString.call(obj);
+
+        if ('function' === Document && 'object' === document && !isFunction(Document.insertSheetRule)) {
             const style = document.createElement('style');
             style.setAttribute('media', 'screen');
             style.appendChild(document.createTextNode(''));
@@ -14,9 +16,13 @@
              * 添加 CSS 样式规则。
              * @param {String} rule 
              */
-            Document.prototype.insertSheetRule = function(rule) {
-                style.sheet.insertRule(rule, style.sheet.cssRules.length);
-            }
+            Object.defineProperty(Document, 'insertSheetRule', {
+                value: function(rule) {
+                    style.sheet.insertRule(rule, style.sheet.cssRules.length);
+                },
+                enumerable: false,
+                configurable: false
+            });
         }
     }
 })(this);
