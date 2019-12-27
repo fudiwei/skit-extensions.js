@@ -79,7 +79,11 @@
                 .replace(/%5D/gi, ']');
 
             for (let k in query) {
-                params.push(encode(k) + '=' + query[k]);
+                if (query[k] === undefined || query[k] === null) {
+                    params.push(encode(k) + '=');
+                } else {
+                    params.push(encode(k) + '=' + encode(query[k]));
+				}
             }
 
             if (params.length > 0) {
