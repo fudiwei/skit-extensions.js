@@ -211,7 +211,8 @@
                         method: options.method,
                         url: options.url,
                         header: options.headers, // for Wechat / Baidu / Toutiao
-                        headers: options.headers, // for Alipay
+						headers: options.headers, // for Alipay
+						timeout: options.timeout,
                         data: options.data,
                         dataType: '',
                         success: (res) => {
