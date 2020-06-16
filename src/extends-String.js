@@ -32,8 +32,18 @@
 
     if (!isFunction(String.prototype.replaceAll)) {
         Object.defineProperty(String.prototype, 'replaceAll', {
-            value: String.prototype.replaceAll = function(substr, replacement = '') {
+            value: function(substr, replacement = '') {
                 return this.split(substr).join(replacement);
+            },
+            enumerable: false,
+            configurable: false
+        });
+    }
+
+    if (!isFunction(String.prototype.reverse)) {
+        Object.defineProperty(String.prototype, 'reverse', {
+            value: function() {
+                return Array.from(this).reverse().join('');
             },
             enumerable: false,
             configurable: false
