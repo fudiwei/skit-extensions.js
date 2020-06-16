@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const gulp$babel = require('gulp-babel'),
     gulp$concat = require('gulp-concat'),
     gulp$eslint = require('gulp-eslint'),
+    gulp$mocha = require('gulp-mocha'),
     gulp$rimraf = require('gulp-rimraf'),
     gulp$sourcemaps = require('gulp-sourcemaps'),
     gulp$strip = require('gulp-strip-debug'),
@@ -26,6 +27,14 @@ gulp.task('eslint', () => {
         .pipe(gulp$eslint())
         .pipe(gulp$eslint.format())
         .pipe(gulp$eslint.failAfterError());
+});
+
+gulp.task('mocha', () => {
+	return gulp
+		.src(['test/**/*.test.js'])
+		.pipe(gulp$mocha({
+			reporter: 'spec'
+		}));
 });
 
 gulp.task('dist', gulp.series('clean', () => {
@@ -61,6 +70,6 @@ gulp.task('dist', gulp.series('clean', () => {
         .pipe(gulp.dest('dist'));
 }));
 
-gulp.task('default', gulp.series('clean', 'eslint', () => {
+gulp.task('default', gulp.series('clean', 'eslint', 'mocha', () => {
     gulp.run('dist');
 }));
