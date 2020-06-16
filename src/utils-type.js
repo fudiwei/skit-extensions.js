@@ -22,9 +22,9 @@
     'use strict';
     const $ = {};
 
-    $.isNull = (obj) => null === obj;
+    $.isNull = (obj) => obj === null;
 
-    $.isUndefined = (obj) => undefined === obj;
+    $.isUndefined = (obj) => obj === void 0;
 
     $.isNullOrUndefined = (obj) => $.isNull(obj) || $.isUndefined(obj);
 
@@ -36,13 +36,20 @@
 
     $.isObject = (obj) => '[object Object]' === Object.prototype.toString.call(obj);
 
-    $.isArray = (obj) => '[object Array]' === Object.prototype.toString.call(obj);
+    $.isObjectLike = (obj) => $.isObject(obj) || (!$.isNullOrUndefined(obj) && typeof val === 'object');
+
+    $.isArray = (obj) => Array.isArray(obj);
 
     $.isFunction = (obj) => '[object Function]' === Object.prototype.toString.call(obj);
 
     $.isDate = (obj) => '[object Date]' === Object.prototype.toString.call(obj);
 
     $.isFormData = (obj) => '[object FormData]' === Object.prototype.toString.call(obj);
+
+    $.isPromise = (obj) => '[object Promise]' === Object.prototype.toString.call(obj);
+
+    $.isPromiseLike = (obj) => $.isPromise(obj) || ((typeof obj === 'object' || typeof obj === 'function') &&
+	typeof obj.then === 'function');
 
     return $;
 }));

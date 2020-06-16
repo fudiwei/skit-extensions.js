@@ -52,18 +52,18 @@ export namespace STEP.JSUtils {
         isObject(obj: any): boolean;
 
         /**
+         * 判断对象是否与 Object 类型类似。
+         * @param {Object} obj
+         * @return {Boolean}
+         */
+        isObjectLike(obj: any): boolean;
+
+        /**
          * 判断对象是否是 Array 类型。
          * @param {Object} obj
          * @return {Boolean}
          */
         isArray(obj: any): boolean;
-
-        /**
-         * 判断对象是否是 Function 类型。
-         * @param {Object} obj
-         * @return {Boolean}
-         */
-        isFunction(obj: any): boolean;
 
         /**
          * 判断对象是否是 Function 类型。
@@ -85,6 +85,20 @@ export namespace STEP.JSUtils {
          * @return {Boolean}
          */
         isFormData(obj: any): boolean;
+
+        /**
+         * 判断对象是否是 Promise 类型。
+         * @param {Object} obj
+         * @return {Boolean}
+         */
+        isPromise(obj: any): boolean;
+
+        /**
+         * 判断对象是否与 Promise 类型类似（判断是否包含 .then()，一般用于 polyfill 引入的 Promise 第三方库）。
+         * @param {Object} obj
+         * @return {Boolean}
+         */
+        isPromiseLike(obj: any): boolean;
     }
 
     export const $$: TypeUtilConstructor;
