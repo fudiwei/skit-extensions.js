@@ -22,7 +22,7 @@ declare global {
          * @param {Boolean} options.ignoreCase 是否忽略大小写（默认值 false）。
          * @returns {Boolean}
          */
-        equals(str: string, options?: { ignoreCase?: boolean }): boolean;
+		equals(str: string, options?: { ignoreCase?: boolean }): boolean;
 
         /**
          * 返回一个替换所有待替换值的新字符串。
@@ -31,5 +31,12 @@ declare global {
          * @returns {String}
          */
         replaceAll(substr: string, replacement?: string): string;
+		
+        /**
+         * 返回一个是字符串反转后的新字符串。
+         * @param {String} str 待反转的字符串。
+         * @returns {Boolean}
+         */
+        reverse(): string;
     }
 }
