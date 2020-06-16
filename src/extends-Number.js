@@ -25,7 +25,7 @@
     if (!isFunction(Number.prototype.toFloor)) {
         Object.defineProperty(Number.prototype, 'toFloor', {
             value: function(num = 0) {
-                return Math.floor(this * Math.pow(10, num)) / Math.pow(10, num);
+                return Math.floor(this * Math.pow(10, num)) / Math.pow(10, num) + '';
             },
             enumerable: false,
             configurable: false
@@ -35,7 +35,7 @@
     if (!isFunction(Number.prototype.toCeil)) {
         Object.defineProperty(Number.prototype, 'toCeil', {
             value: function(num = 0) {
-                return Math.ceil(this * Math.pow(10, num)) / Math.pow(10, num);
+                return Math.ceil(this * Math.pow(10, num)) / Math.pow(10, num) + '';
             },
             enumerable: false,
             configurable: false
@@ -45,7 +45,7 @@
     if (!isFunction(Number.prototype.toRound)) {
         Object.defineProperty(Number.prototype, 'toRound', {
             value: function(num = 0) {
-                return Math.round(this * Math.pow(10, num)) / Math.pow(10, num);
+                return Math.round(this * Math.pow(10, num)) / Math.pow(10, num) + '';
             },
             enumerable: false,
             configurable: false
