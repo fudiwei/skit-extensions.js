@@ -13,7 +13,8 @@
     "scripts": {
         "clean": "gulp clean",
         "eslint": "gulp eslint",
-        "build": "gulp dist --outputFiles=min --sourceMap=no",
+        "test": "gulp mocha",
+        "build": "gulp --outputFiles=min --sourceMap=no",
         "deploy": "npm run build && npm publish --access=public"
     },
     "typings": "src/@types/index.d.ts",
