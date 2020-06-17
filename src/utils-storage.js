@@ -100,7 +100,9 @@
         if (value.startsWith(PREFIX_JSON)) {
             try {
                 return JSON.parse(value.substring(PREFIX_JSON.length));
-            } catch (err) {}
+            } catch (err) {
+				// NOT a JSON.
+			}
         } else if (value.startsWith(PREFIX_Number)) {
             return +value.substring(PREFIX_Number.length);
         } else if (value.startsWith(PREFIX_Boolean)) {

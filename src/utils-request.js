@@ -395,7 +395,7 @@
                 return new Promise((resolve, reject) => {
                     let responseHeaders = {};
 
-                    rootObj.uploadFile({
+                    const uploadTask = rootObj.uploadFile({
                         url: options.url,
                         header: options.headers,
                         filePath: options.filePath,
