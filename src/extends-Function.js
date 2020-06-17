@@ -41,7 +41,7 @@
                     throw 'The value of wait must be greater than zero.';
 
                 let timer = null,
-                    remaining = 0,
+                    remaining = 0, // eslint-disable-line no-unused-vars
                     previous = new Date();
 
                 return function() {

@@ -43,8 +43,7 @@ gulp.task('dist', gulp.series('clean', () => {
         presets: [
             [
                 '@babel/preset-env', {
-                    modules: false,
-                    blacklist: ['useStrict']
+                    modules: false
                 }
             ]
         ]
@@ -70,6 +69,4 @@ gulp.task('dist', gulp.series('clean', () => {
         .pipe(gulp.dest('dist'));
 }));
 
-gulp.task('default', gulp.series('clean', 'eslint', 'mocha', () => {
-    gulp.run('dist');
-}));
+gulp.task('default', gulp.series('clean', 'eslint', 'mocha', 'dist'));

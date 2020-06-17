@@ -20,7 +20,8 @@ module.exports = {
         'ecmaVersion': 6
     },
     'rules': {
-        'no-console': 'off',
+		'no-console': 'off',
+		'no-extra-boolean-cast': 'off',
         'promise/avoid-new': 'off'
     },
     'plugins': [

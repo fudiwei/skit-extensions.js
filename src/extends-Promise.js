@@ -10,7 +10,7 @@
     if (!isFunction(Promise.delay)) {
         Object.defineProperty(Promise, 'delay', {
             value: function(ms = 0, value) {
-                return new Promise((resolve, reject) => {
+                return new Promise((resolve) => {
                     setTimeout(() => {
                         resolve(value);
                     }, ms);
@@ -45,12 +45,10 @@
                     }
 
                     promises = promises.concat(() => Promise.resolve());
-                    promises.reduce(
+                    promises.reduce( // eslint-disable-line promise/catch-or-return
                         iterateeFunc,
                         Promise.resolve(false)
-                    ).then(() => {
-                        resolve(results);
-                    });
+                    ).then(() => resolve(results));
                 });
             },
             enumerable: false,
