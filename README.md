@@ -8,7 +8,7 @@
 
 * 若干常用工具类；
 
-* 支持 AMD / CMD / ES6 / 微信小程序 / 支付宝小程序 / 百度小程序 / 头条小程序模块化引入；
+* 支持 CommomJS / AMD / CMD / ES6 Module / 微信小程序 / 支付宝小程序 / 百度小程序 / 头条小程序模块化引入；
 
 * 支持浏览器和小程序环境；
 
@@ -32,7 +32,7 @@
 
 安装：
 
-> 提示：暂时未发布到 npmjs.org，需先自行执行 `npm run deploy` 发布到私有仓库。
+> 提示：暂时未发布到 npmjs.org，需先自行执行 `npm publish` 发布到私有仓库。
 
 ``` shell
 npm install @step/js-utils
