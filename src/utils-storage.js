@@ -2,19 +2,17 @@
     const $ = '$$storage';
 
     if ('object' === typeof wx && 'object' === typeof module && !!wx.login) {
-        module.exports[$] = factory(); // Wechat Mini-Program
+        module.exports[$] = factory(); /* Wechat Mini-Program */
     } else if ('object' === typeof my && 'object' === typeof module && !!my.login) {
-        module.exports[$] = factory(); // Alipay Mini-Program
+        module.exports[$] = factory(); /* Alipay Mini-Program */
     } else if ('object' === typeof swan && 'object' === typeof module && !!swan.login) {
-        module.exports[$] = factory(); // Baidu Smart-Program
+        module.exports[$] = factory(); /* Baidu Smart-Program */
     } else if ('object' === typeof tt && 'object' === typeof module && !!tt.login) {
-        module.exports[$] = factory(); // Toutiao Mini-App
+        module.exports[$] = factory(); /* Toutiao Mini-App */
     } else if ('object' === typeof exports && 'object' === typeof module) {
-        module.exports[$] = factory(); // CommonJS
+        module.exports[$] = factory(); /* CommonJS */
     } else if ('function' === typeof define && (define.amd || define.cmd)) {
-        define(factory); // AMD/CMD
-    } else if ('object' === typeof exports) {
-        exports[$] = factory();
+        define($, factory); /* AMD/CMD */
     } else if (root) {
         root[$] = factory();
     }
