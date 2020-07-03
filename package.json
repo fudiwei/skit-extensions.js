@@ -17,10 +17,10 @@
         "build": "gulp dist --outputFiles=min --sourceMap=no",
         "deploy": "npm run build && npm publish --access=public"
     },
-    "typings": "src/@types/index.d.ts",
+    "typings": "types/index.d.ts",
     "files": [
-        "src/@types/*",
-        "dist/*"
+        "dist/*",
+		"types/*"
     ],
     "dependencies": {},
     "devDependencies": {
