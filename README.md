@@ -1,4 +1,4 @@
-### js-utils
+### @step/js-utils
 
 ---
 
