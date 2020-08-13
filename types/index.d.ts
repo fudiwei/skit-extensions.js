@@ -1,9 +1,10 @@
-import ExtendsDate from './extends-Date';
-import ExtendsDocument from './extends-Document';
-import ExtendsFunction from './extends-Function';
-import ExtendsNumber from './extends-Number';
-import ExtendsPromise from './extends-Promise';
-import ExtendsString from './extends-String';
+import './extends-Array';
+import './extends-Date';
+import './extends-Document';
+import './extends-Function';
+import './extends-Number';
+import './extends-Promise';
+import './extends-String';
 import UtilsType from './utils-type';
 import UtilsEncoding from './utils-encoding';
 import UtilsRegex from './utils-regex';
