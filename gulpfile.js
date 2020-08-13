@@ -12,8 +12,8 @@ const gulp$babel = require('gulp-babel'),
 const ARGS_OUTPUTFILES = gulp$util.env.outputFiles || 'both'; // 指示输出文件类型。可取值 both / min
 
 gulp.task('clean', () => {
-	return gulp
-		.src(['dist/**/*.js', 'dist/**/*.js.map'], {
+    return gulp
+        .src(['dist/**/*.js', 'dist/**/*.js.map'], {
             read: false
         })
         .pipe(gulp$rimraf({
@@ -22,19 +22,19 @@ gulp.task('clean', () => {
 });
 
 gulp.task('eslint', () => {
-	return gulp
-		.src(['src/**/*.js'])
+    return gulp
+        .src(['src/**/*.js'])
         .pipe(gulp$eslint())
         .pipe(gulp$eslint.format())
         .pipe(gulp$eslint.failAfterError());
 });
 
 gulp.task('mocha', () => {
-	return gulp
-		.src(['test/**/*.test.js'])
-		.pipe(gulp$mocha({
-			reporter: 'spec'
-		}));
+    return gulp
+        .src(['test/**/*.test.js'])
+        .pipe(gulp$mocha({
+            reporter: 'spec'
+        }));
 });
 
 gulp.task('dist', gulp.series('clean', () => {
@@ -58,8 +58,8 @@ gulp.task('dist', gulp.series('clean', () => {
             .pipe(gulp.dest('dist'));
     }
 
-	return gulp
-		.src(files)
+    return gulp
+        .src(files)
         .pipe(gulp$concat('index.min.js'))
         .pipe(gulp$strip())
         .pipe(gulp$sourcemaps.init())

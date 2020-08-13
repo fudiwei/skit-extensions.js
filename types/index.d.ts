@@ -35,5 +35,5 @@ export default {
     /**
      * AJAX 请求工具类。
      */
-    $$request: UtilsRequest.STEP.JSUtils.$$request
+    $$request: UtilsRequest.STEP.JSUtils.$$request,
 };

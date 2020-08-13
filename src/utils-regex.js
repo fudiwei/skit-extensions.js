@@ -16,7 +16,7 @@
     } else if (root) {
         root[$] = factory();
     }
-})(this, (() => {
+})(this, () => {
     'use strict';
     const $ = {};
 
@@ -85,7 +85,7 @@
             71: '台湾',
             81: '香港',
             82: '澳门',
-            91: '国外 '
+            91: '国外 ',
         };
         if (!cities[value.substr(0, 2)]) {
             return false;
@@ -114,9 +114,9 @@
             .replace(/(&lt;)/g, '<')
             .replace(/(&gt;)/g, '>')
             .replace(/(&amp;)/g, '&')
-            .replace(/<br\s*\/?\s*>/ig, '\r\n')
+            .replace(/<br\s*\/?\s*>/gi, '\r\n')
             .replace(/<[^>]+>/g, '');
     };
 
     return $;
-}));
+});

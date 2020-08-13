@@ -81,7 +81,7 @@
                     params.push(encode(k) + '=');
                 } else {
                     params.push(encode(k) + '=' + encode(query[k]));
-				}
+                }
             }
 
             if (params.length > 0) {
@@ -209,8 +209,8 @@
                         method: options.method,
                         url: options.url,
                         header: options.headers, // for Wechat / Baidu / Toutiao
-						headers: options.headers, // for Alipay
-						timeout: options.timeout,
+                        headers: options.headers, // for Alipay
+                        timeout: options.timeout,
                         data: options.data,
                         dataType: '',
                         success: (res) => {

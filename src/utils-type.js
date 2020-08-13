@@ -16,7 +16,7 @@
     } else if (root) {
         root[$] = factory();
     }
-})(this, (() => {
+})(this, () => {
     'use strict';
     const $ = {};
 
@@ -46,8 +46,7 @@
 
     $.isPromise = (obj) => '[object Promise]' === Object.prototype.toString.call(obj);
 
-    $.isPromiseLike = (obj) => $.isPromise(obj) || ((typeof obj === 'object' || typeof obj === 'function') &&
-	typeof obj.then === 'function');
+    $.isPromiseLike = (obj) => $.isPromise(obj) || ((typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function');
 
     return $;
-}));
+});
