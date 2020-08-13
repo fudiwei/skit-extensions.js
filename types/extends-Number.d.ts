@@ -35,14 +35,14 @@ declare global {
          * @returns {Boolean}
          */
         isEven(): boolean;
-	}
-	
-	interface NumberConstructor {
-		/**
-		 * 确定传递的值是否是一个有穷的 Number 类型、或可转换成有穷数的 String 类型。
-		 * @param {Object} val
-		 * @returns {Boolean}
-		 */
-		isNumber(val: any): boolean;
-	}
+    }
+
+    interface NumberConstructor {
+        /**
+         * 确定传递的值是否是一个有穷的 Number 类型、或可转换成有穷数的 String 类型。
+         * @param {Object} val
+         * @returns {Boolean}
+         */
+        isNumber(val: any): boolean;
+    }
 }

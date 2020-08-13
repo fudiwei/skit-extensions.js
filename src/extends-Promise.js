@@ -9,7 +9,7 @@
 
     if (!isFunction(Promise.delay)) {
         Object.defineProperty(Promise, 'delay', {
-            value: function(ms = 0, value) {
+            value: function (ms = 0, value) {
                 return new Promise((resolve) => {
                     setTimeout(() => {
                         resolve(value);
@@ -17,13 +17,13 @@
                 });
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 
     if (!isFunction(Promise.sequential)) {
         Object.defineProperty(Promise, 'sequential', {
-            value: function(promises) {
+            value: function (promises) {
                 if (!Array.isArray(promises)) {
                     throw new Error('The first argument need to be an array of Promises.');
                 }
@@ -42,17 +42,20 @@
                             .catch((err) => {
                                 return reject(err);
                             });
-                    }
+                    };
 
                     promises = promises.concat(() => Promise.resolve());
-                    promises.reduce( // eslint-disable-line promise/catch-or-return
-                        iterateeFunc,
-                        Promise.resolve(false)
-                    ).then(() => resolve(results));
+                    promises
+                        .reduce(
+                            // eslint-disable-line promise/catch-or-return
+                            iterateeFunc,
+                            Promise.resolve(false)
+                        )
+                        .then(() => resolve(results));
                 });
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 })();

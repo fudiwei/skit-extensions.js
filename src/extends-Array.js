@@ -5,7 +5,7 @@
 
     if (!isFunction(Array.prototype.distinct)) {
         Object.defineProperty(Array.prototype, 'distinct', {
-            value: function(comparerFn) {
+            value: function (comparerFn) {
                 if (comparerFn === undefined) {
                     comparerFn = (x, y) => x === y;
                 }
@@ -23,7 +23,7 @@
                 return result;
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 })();

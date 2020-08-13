@@ -20,7 +20,7 @@
     "typings": "types/index.d.ts",
     "files": [
         "dist/*",
-		"types/*"
+        "types/*"
     ],
     "dependencies": {},
     "devDependencies": {

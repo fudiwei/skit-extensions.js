@@ -20,9 +20,13 @@ module.exports = {
         'ecmaVersion': 6
     },
     'rules': {
-		'no-console': 'off',
-		'no-extra-boolean-cast': 'off',
-        'promise/avoid-new': 'off'
+        'indent': ['error', 4, { SwitchCase: 1 }],
+        'linebreak-style': ['warn', 'windows'],
+        'no-console': 'off',
+        'no-extra-boolean-cast': 'off',
+        'promise/avoid-new': 'off',
+        'quotes': ['error', 'single'],
+        'semi': ['error', 'always']
     },
     'plugins': [
         'promise'

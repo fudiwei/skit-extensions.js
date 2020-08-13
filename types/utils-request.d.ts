@@ -163,12 +163,7 @@ export namespace STEP.JSUtils {
          * @param {Number} config.timeout （可选）默认超时时间（单位：毫秒。默认值 30000）。
          * @param {Boolean} config.withCredentials （可选）默认是否使用跨域访问控制（默认值 false）。
          */
-        create(config?: {
-            baseUrl?: string;
-            headers?: { [key: string]: string };
-            timeout?: number;
-            withCredentials?: boolean;
-        }): RequestUtil;
+        create(config?: { baseUrl?: string; headers?: { [key: string]: string }; timeout?: number; withCredentials?: boolean }): RequestUtil;
 
         /**
          * 使用默认配置发起一个 GET 请求。

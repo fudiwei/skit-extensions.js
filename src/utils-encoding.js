@@ -16,14 +16,13 @@
     } else if (root) {
         root[$] = factory();
     }
-})(this, (() => {
+})(this, () => {
     'use strict';
     const $ = {};
 
     $.base64 = {
         encode(str = '') {
-            if (undefined === str)
-                throw '1 argument required, but only 0 present.';
+            if (undefined === str) throw '1 argument required, but only 0 present.';
 
             const KEYSTRING = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
             const _utf8_encode = (string) => {
@@ -33,7 +32,7 @@
                     let c = string.charCodeAt(n);
                     if (c < 128) {
                         utftext += String.fromCharCode(c);
-                    } else if ((c > 127) && (c < 2048)) {
+                    } else if (c > 127 && c < 2048) {
                         utftext += String.fromCharCode((c >> 6) | 192);
                         utftext += String.fromCharCode((c & 63) | 128);
                     } else {
@@ -41,7 +40,6 @@
                         utftext += String.fromCharCode(((c >> 6) & 63) | 128);
                         utftext += String.fromCharCode((c & 63) | 128);
                     }
-
                 }
                 return utftext;
             };
@@ -70,8 +68,7 @@
         },
 
         decode(str = '') {
-            if (undefined === str)
-                throw '1 argument required, but only 0 present.';
+            if (undefined === str) throw '1 argument required, but only 0 present.';
 
             const KEYSTRING = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
             const _utf8_decode = (utftext) => {
@@ -85,7 +82,7 @@
                     if (c < 128) {
                         string += String.fromCharCode(c);
                         i++;
-                    } else if ((c > 191) && (c < 224)) {
+                    } else if (c > 191 && c < 224) {
                         c2 = utftext.charCodeAt(i + 1);
                         string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
                         i += 2;
@@ -122,7 +119,7 @@
             }
             output = _utf8_decode(output);
             return output;
-        }
+        },
     };
 
     $.guid = {
@@ -131,12 +128,12 @@
                 constructor() {
                     Object.defineProperty(this, 'value', {
                         value: 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-                            const r = Math.random() * 16 | 0;
-                            const v = (c == 'x') ? r : (r & 0x3 | 0x8);
+                            const r = (Math.random() * 16) | 0;
+                            const v = c == 'x' ? r : (r & 0x3) | 0x8;
                             return v.toString(16);
                         }),
                         enumerable: true,
-                        writable: false
+                        writable: false,
                     });
                 }
 
@@ -164,8 +161,8 @@
             }
 
             return new Guid();
-        }
+        },
     };
 
     return $;
-}));
+});

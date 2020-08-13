@@ -16,7 +16,7 @@
     } else if (root) {
         root[$] = factory();
     }
-})(this, (() => {
+})(this, () => {
     'use strict';
     const $ = {};
 
@@ -41,20 +41,22 @@
             key: (i) => rootObj.getStorageInfoSync().keys[i],
             get length() {
                 return rootObj.getStorageInfoSync().keys.length;
-            }
+            },
         };
     } else if ('object' === typeof localStorage) {
         Storage = localStorage;
     } else {
-        const throwError = () => { throw new Error('Current environment does not supported $storage') };
+        const throwError = () => {
+            throw new Error('Current environment does not supported $storage');
+        };
         Storage = {
             setItem: throwError,
             getItem: throwError,
             removeItem: throwError,
             clear: throwError,
             key: throwError,
-            length: undefined
-        }
+            length: undefined,
+        };
     }
 
     const isArray = (obj) => '[object Array]' === Object.prototype.toString.call(obj);
@@ -99,8 +101,8 @@
             try {
                 return JSON.parse(value.substring(PREFIX_JSON.length));
             } catch (err) {
-				// NOT a JSON.
-			}
+                // NOT a JSON.
+            }
         } else if (value.startsWith(PREFIX_Number)) {
             return +value.substring(PREFIX_Number.length);
         } else if (value.startsWith(PREFIX_Boolean)) {
@@ -129,4 +131,4 @@
     };
 
     return $;
-}));
+});
