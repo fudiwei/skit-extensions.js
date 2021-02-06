@@ -45,13 +45,8 @@
                     };
 
                     promises = promises.concat(() => Promise.resolve());
-                    promises
-                        .reduce(
-                            // eslint-disable-line promise/catch-or-return
-                            iterateeFunc,
-                            Promise.resolve(false)
-                        )
-                        .then(() => resolve(results));
+                    // eslint-disable-next-line promise/catch-or-return
+                    promises.reduce(iterateeFunc, Promise.resolve(false)).then(() => resolve(results));
                 });
             },
             enumerable: false,
