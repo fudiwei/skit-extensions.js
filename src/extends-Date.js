@@ -2,7 +2,7 @@
     'use strict';
 
     const isFunction = (obj) => '[object Function]' === Object.prototype.toString.call(obj);
-    
+
     let systemLanguage;
     if ('object' === typeof wx && 'function' === typeof wx['getSystemInfoSync']) {
         systemLanguage = wx.getSystemInfoSync().language;
@@ -12,18 +12,18 @@
 
     if (!isFunction(Date.today)) {
         Object.defineProperty(Date, 'today', {
-            value: function() {
+            value: function () {
                 const date = new Date();
                 return new Date(date.getFullYear(), date.getMonth(), date.getDate());
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 
     if (!isFunction(Date.prototype.toFormattedString)) {
         Object.defineProperty(Date.prototype, 'toFormattedString', {
-            value: function(format) {
+            value: function (format) {
                 const O = {
                     'M+': this.getMonth() + 1,
                     'd+': this.getDate(),
@@ -32,26 +32,26 @@
                     'm+': this.getMinutes(),
                     's+': this.getSeconds(),
                     'q+': Math.floor((this.getMonth() + 3) / 3),
-                    'f': this.getMilliseconds()
+                    f: this.getMilliseconds(),
                 };
                 if (/(y+)/.test(format)) {
                     format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
                 }
                 for (let k in O) {
                     if (new RegExp('(' + k + ')').test(format)) {
-                        format = format.replace(RegExp.$1, (RegExp.$1.length === 1) ? (O[k]) : (('00' + O[k]).substr(('' + O[k]).length)));
+                        format = format.replace(RegExp.$1, RegExp.$1.length === 1 ? O[k] : ('00' + O[k]).substr(('' + O[k]).length));
                     }
                 }
                 return format;
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 
     if (!isFunction(Date.prototype.isWeekend)) {
         Object.defineProperty(Date.prototype, 'isWeekend', {
-            value: function() {
+            value: function () {
                 return this.getDay() % 7 === 0 || this.getDay() % 7 === 6;
             },
             enumerable: false,
@@ -61,18 +61,18 @@
 
     if (!isFunction(Date.prototype.isToday)) {
         Object.defineProperty(Date.prototype, 'isToday', {
-            value: function() {
+            value: function () {
                 const now = new Date();
                 return this.getFullYear() === now.getFullYear() && this.getMonth() === now.getMonth() && this.getDate() === now.getDate();
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 
     if (!isFunction(Date.prototype.setUnixTimestamp)) {
         Object.defineProperty(Date.prototype, 'setUnixTimestamp', {
-            value: function(timestamp, timezone = 8) {
+            value: function (timestamp, timezone = 8) {
                 if (isNaN(timestamp)) {
                     throw 'Timestamp must be a number.';
                 }
@@ -85,13 +85,13 @@
                 return this;
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 
     if (!isFunction(Date.prototype.getUnixTimestamp)) {
         Object.defineProperty(Date.prototype, 'getUnixTimestamp', {
-            value: function(timezone = 8) {
+            value: function (timezone = 8) {
                 if (timezone < -12 || timezone > 12) {
                     throw 'Timezone must be a number between -12 to 12.';
                 }
@@ -100,13 +100,13 @@
                 return parseInt(millistamp / 1000);
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 
     if (!isFunction(Date.prototype.toLocaleDayString)) {
         Object.defineProperty(Date.prototype, 'toLocaleDayString', {
-            value: function(locale) {
+            value: function (locale) {
                 const day = this.getDay();
                 const lang = String(locale || systemLanguage || '').toLowerCase();
                 if (lang.startsWith('zh')) {
@@ -132,13 +132,13 @@
                 }
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 
     if (!isFunction(Date.prototype.toLocaleShortDayString)) {
         Object.defineProperty(Date.prototype, 'toLocaleShortDayString', {
-            value: function(locale) {
+            value: function (locale) {
                 const day = this.getDay();
                 const lang = String(locale || systemLanguage || '').toLowerCase();
                 if (lang.startsWith('zh')) {
@@ -164,13 +164,13 @@
                 }
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 
     if (!isFunction(Date.prototype.toLocaleMonthString)) {
         Object.defineProperty(Date.prototype, 'toLocaleMonthString', {
-            value: function(locale) {
+            value: function (locale) {
                 const month = this.getMonth();
                 const lang = String(locale || systemLanguage || '').toLowerCase();
                 if (lang.startsWith('zh')) {
@@ -180,29 +180,43 @@
                 } else if (lang.startsWith('ko')) {
                     return ['일월', '이월', '삼월', '사월', '오월', '유월', '칠월', '팔월', '구월', '시월', '십일월', '십이월'][month]; /* Korean */
                 } else if (lang.startsWith('nl')) {
-                    return ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'][month]; /* Dutch */
+                    return ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'][
+                        month
+                    ]; /* Dutch */
                 } else if (lang.startsWith('de')) {
-                    return ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'][month]; /* German */
+                    return ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'][
+                        month
+                    ]; /* German */
                 } else if (lang.startsWith('it')) {
-                    return ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'][month]; /* Italian */
+                    return ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'][
+                        month
+                    ]; /* Italian */
                 } else if (lang.startsWith('pt')) {
-                    return ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'][month]; /* Portuguese */
+                    return ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'][
+                        month
+                    ]; /* Portuguese */
                 } else if (lang.startsWith('sv')) {
-                    return ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'][month]; /* Swedish */
+                    return ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'][
+                        month
+                    ]; /* Swedish */
                 } else if (lang.startsWith('fr')) {
-                    return ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'][month]; /* French */
+                    return ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'][
+                        month
+                    ]; /* French */
                 } else {
-                    return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][month]; /* English */
+                    return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][
+                        month
+                    ]; /* English */
                 }
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 
     if (!isFunction(Date.prototype.toLocaleShortMonthString)) {
         Object.defineProperty(Date.prototype, 'toLocaleShortMonthString', {
-            value: function(locale) {
+            value: function (locale) {
                 const month = this.getMonth();
                 const lang = String(locale || systemLanguage || '').toLowerCase();
                 if (lang.startsWith('zh')) {
@@ -228,7 +242,7 @@
                 }
             },
             enumerable: false,
-            configurable: false
+            configurable: false,
         });
     }
 })();

@@ -14,14 +14,14 @@
 
             /**
              * 添加 CSS 样式规则。
-             * @param {String} rule 
+             * @param {String} rule
              */
             Object.defineProperty(Document, 'insertSheetRule', {
-                value: function(rule) {
+                value: function (rule) {
                     style.sheet.insertRule(rule, style.sheet.cssRules.length);
                 },
                 enumerable: false,
-                configurable: false
+                configurable: false,
             });
         }
     }

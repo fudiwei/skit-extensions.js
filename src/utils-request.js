@@ -16,7 +16,7 @@
     } else if (root) {
         root[$] = factory();
     }
-})(this, (() => {
+})(this, () => {
     'use strict';
 
     let rootObj;
@@ -42,10 +42,10 @@
     const defaultConfig = {
         baseUrl: '',
         headers: {
-            'Content-Type': 'application/json; charset=utf-8'
+            'Content-Type': 'application/json; charset=utf-8',
         },
         timeout: 30000,
-        withCredentials: false
+        withCredentials: false,
     };
 
     const parseUrl = (baseUrl = '', relativeUrl = '', query) => {
@@ -67,14 +67,15 @@
 
         if (isArray(query) || isObject(query)) {
             const params = [];
-            const encode = (val) => encodeURIComponent(val)
-                .replace(/%40/gi, '@')
-                .replace(/%3A/gi, ':')
-                .replace(/%24/g, '$')
-                .replace(/%2C/gi, ',')
-                .replace(/%20/g, '+')
-                .replace(/%5B/gi, '[')
-                .replace(/%5D/gi, ']');
+            const encode = (val) =>
+                encodeURIComponent(val)
+                    .replace(/%40/gi, '@')
+                    .replace(/%3A/gi, ':')
+                    .replace(/%24/g, '$')
+                    .replace(/%2C/gi, ',')
+                    .replace(/%20/g, '+')
+                    .replace(/%5B/gi, '[')
+                    .replace(/%5D/gi, ']');
 
             for (let k in query) {
                 if (query[k] === undefined || query[k] === null) {
@@ -119,7 +120,7 @@
             }
         };
 
-        headers.forEach(item => setter(item));
+        headers.forEach((item) => setter(item));
 
         return res;
     };
@@ -140,7 +141,7 @@
         options = options || {};
         if (isString(options)) {
             options = {
-                url: options
+                url: options,
             };
         }
 
@@ -153,7 +154,7 @@
             data: 'GET' === String(method).toUpperCase() ? null : options.data,
             withCredentials: Boolean(options.withCredentials),
             onDownloadProgress: isFunction(options.onDownloadProgress) ? options.onDownloadProgress : noop,
-            onUploadProgress: isFunction(options.onUploadProgress) ? options.onUploadProgress : noop
+            onUploadProgress: isFunction(options.onUploadProgress) ? options.onUploadProgress : noop,
         };
     };
 
@@ -166,7 +167,7 @@
     };
 
     /**
-     * 
+     *
      */
     class RequestFactory {
         constructor(config = {}) {
@@ -174,33 +175,25 @@
                 baseUrl: isString(config.baseUrl) ? config.baseUrl : undefined,
                 headers: isArray(config.headers) ? config.headers : undefined,
                 timeout: isNumber(config.timeout) ? config.timeout : undefined,
-                withCredentials: isBoolean(config.withCredentials) ? config.withCredentials : undefined
+                withCredentials: isBoolean(config.withCredentials) ? config.withCredentials : undefined,
             };
             Object.defineProperty(this, 'config', {
                 value: config,
                 enumerable: true,
-                writable: false
+                writable: false,
             });
         }
 
         request(options = {}) {
             options = {
                 method: String(options.method || 'get').toUpperCase(),
-                url: parseUrl(
-                    (this.config.baseUrl || defaultConfig.baseUrl),
-                    options.url,
-                    options.query
-                ),
-                headers: parseHeaders(
-                    defaultConfig.headers,
-                    this.config.headers,
-                    options.headers
-                ),
+                url: parseUrl(this.config.baseUrl || defaultConfig.baseUrl, options.url, options.query),
+                headers: parseHeaders(defaultConfig.headers, this.config.headers, options.headers),
                 data: parseData(options.data),
                 timeout: Number(this.config.timeout) || Number(options.timeout) || Number(defaultConfig.timeout),
-                withCredentials: Boolean((void 0 !== this.config.withCredentials) ? this.config.withCredentials : defaultConfig.withCredentials),
+                withCredentials: Boolean(void 0 !== this.config.withCredentials ? this.config.withCredentials : defaultConfig.withCredentials),
                 onDownloadProgress: isFunction(options.onDownloadProgress) ? options.onDownloadProgress : noop,
-                onUploadProgress: isFunction(options.onUploadProgress) ? options.onUploadProgress : noop
+                onUploadProgress: isFunction(options.onUploadProgress) ? options.onUploadProgress : noop,
             };
 
             if (!!rootObj) {
@@ -224,7 +217,7 @@
                             const response = new Response(
                                 res.statusCode,
                                 res.errMsg,
-                                (!!res.header) ? parseHeaders(res.header) : (!!res.headers) ? parseHeaders(res.headers) : null,
+                                !!res.header ? parseHeaders(res.header) : !!res.headers ? parseHeaders(res.headers) : null,
                                 responseData
                             );
 
@@ -236,10 +229,10 @@
                         },
                         fail: (err) => {
                             reject(createError(`Network error(${err && err.errMsg}).`, 0, options));
-                        }
+                        },
                     });
                 });
-            } else if (void 0 !== typeof(XMLHttpRequest)) {
+            } else if (void 0 !== typeof XMLHttpRequest) {
                 return new Promise((resolve, reject) => {
                     let xhr = new XMLHttpRequest();
                     xhr.open(options.method, options.url, true);
@@ -265,9 +258,9 @@
                         }
 
                         const response = new Response(
-                            (1223 === xhr.status) ? 204 : xhr.status,
-                            (1223 === xhr.status) ? 'No Content' : xhr.statusText,
-                            (!!xhr.getAllResponseHeaders) ? parseHeaders(xhr.getAllResponseHeaders()) : null,
+                            1223 === xhr.status ? 204 : xhr.status,
+                            1223 === xhr.status ? 'No Content' : xhr.statusText,
+                            !!xhr.getAllResponseHeaders ? parseHeaders(xhr.getAllResponseHeaders()) : null,
                             responseData
                         );
 
@@ -280,11 +273,11 @@
                         xhr = null;
                     };
                     xhr.onerror = () => {
-                        reject(createError(`Network error.`, 0, options));
+                        reject(createError('Network error.', 0, options));
                         xhr = null;
                     };
                     xhr.ontimeout = () => {
-                        reject(createError(`Request timeout of expected milliseconds exceeded.`, 'ECONNABORTED', options));
+                        reject(createError('Request timeout of expected milliseconds exceeded.', 'ECONNABORTED', options));
                         xhr = null;
                     };
                     xhr.onprogress = (e) => {
@@ -300,25 +293,17 @@
                     xhr.send(options.data);
                 });
             } else {
-                throw new Error(`Current environment does not supported $$request.request().`);
+                throw new Error('Current environment does not supported $$request.request().');
             }
         }
 
         download(options = {}) {
             options = {
                 method: String(options.method || 'get').toUpperCase(),
-                url: parseUrl(
-                    (this.config.baseUrl || defaultConfig.baseUrl),
-                    options.url,
-                    options.query
-                ),
-                headers: parseHeaders(
-                    defaultConfig.headers,
-                    this.config.headers,
-                    options.headers
-                ),
+                url: parseUrl(this.config.baseUrl || defaultConfig.baseUrl, options.url, options.query),
+                headers: parseHeaders(defaultConfig.headers, this.config.headers, options.headers),
                 data: parseData(options.data),
-                onDownloadProgress: isFunction(options.onDownloadProgress) ? options.onDownloadProgress : noop
+                onDownloadProgress: isFunction(options.onDownloadProgress) ? options.onDownloadProgress : noop,
             };
 
             if (!!rootObj) {
@@ -330,12 +315,7 @@
                         header: options.headers,
                         success: (res) => {
                             let responseData = { tempFilePath: res.tempFilePath || res.apFilePath };
-                            const response = new Response(
-                                (!!res.apFilePath ? 200 : res.statusCode),
-                                '',
-                                responseHeaders,
-                                responseData
-                            );
+                            const response = new Response(!!res.apFilePath ? 200 : res.statusCode, '', responseHeaders, responseData);
 
                             if (response.statusCode >= 200 && response.statusCode < 400) {
                                 resolve(response);
@@ -345,7 +325,7 @@
                         },
                         fail: (err) => {
                             reject(createError(`Network error(${err && err.errMsg}).`, 0, options));
-                        }
+                        },
                     });
 
                     if (!!downloadTask) {
@@ -353,7 +333,7 @@
                             const onHeadersReceivedCallback = (res) => {
                                 responseHeaders = parseHeaders(res.header);
                                 downloadTask.offHeadersReceived(onHeadersReceivedCallback);
-                            }
+                            };
                             downloadTask.onHeadersReceived(onHeadersReceivedCallback);
                         }
 
@@ -366,27 +346,19 @@
                     }
                 });
             } else {
-                throw new Error(`Current environment does not supported $$request.download().`);
+                throw new Error('Current environment does not supported $$request.download().');
             }
         }
 
         upload(options = {}) {
             options = {
                 method: String(options.method || 'get').toUpperCase(),
-                url: parseUrl(
-                    (this.config.baseUrl || defaultConfig.baseUrl),
-                    options.url,
-                    options.query
-                ),
-                headers: parseHeaders(
-                    defaultConfig.headers,
-                    this.config.headers,
-                    options.headers
-                ),
+                url: parseUrl(this.config.baseUrl || defaultConfig.baseUrl, options.url, options.query),
+                headers: parseHeaders(defaultConfig.headers, this.config.headers, options.headers),
                 filePath: String(options.filePath || ''),
                 name: String(options.name || ''),
                 data: isObject(options.data) ? options.data : {},
-                onUploadProgress: isFunction(options.onUploadProgress) ? options.onUploadProgress : noop
+                onUploadProgress: isFunction(options.onUploadProgress) ? options.onUploadProgress : noop,
             };
 
             if (!!rootObj) {
@@ -408,12 +380,7 @@
                                 responseData = res.data;
                             }
 
-                            const response = new Response(
-                                res.statusCode,
-                                '',
-                                (!!res.header ? parseHeaders(res.header) : responseHeaders),
-                                responseData
-                            );
+                            const response = new Response(res.statusCode, '', !!res.header ? parseHeaders(res.header) : responseHeaders, responseData);
 
                             if (response.statusCode >= 200 && response.statusCode < 400) {
                                 resolve(response);
@@ -423,7 +390,7 @@
                         },
                         fail: (err) => {
                             reject(createError(`Network error(${err && err.errMsg}).`, 0, options));
-                        }
+                        },
                     });
 
                     if (!!uploadTask) {
@@ -431,7 +398,7 @@
                             const onHeadersReceivedCallback = (res) => {
                                 responseHeaders = parseHeaders(res.header);
                                 uploadTask.offHeadersReceived(onHeadersReceivedCallback);
-                            }
+                            };
                             uploadTask.onHeadersReceived(onHeadersReceivedCallback);
                         }
 
@@ -444,7 +411,7 @@
                     }
                 });
             } else {
-                throw new Error(`Current environment does not supported $$request.upload().`);
+                throw new Error('Current environment does not supported $$request.upload().');
             }
         }
 
@@ -494,11 +461,11 @@
     }
 
     /**
-     * 
+     *
      */
     class Response {
         /**
-         * 
+         *
          * @param {Number} statusCode 响应状态码。
          * @param {String} statusText 响应状态。
          * @param {Object | Map} headers 响应头。
@@ -508,32 +475,32 @@
             Object.defineProperty(this, 'statusCode', {
                 value: +statusCode,
                 enumerable: true,
-                writable: false
+                writable: false,
             });
             Object.defineProperty(this, 'statusText', {
                 value: String(statusText || ''),
                 enumerable: true,
-                writable: false
+                writable: false,
             });
             Object.defineProperty(this, 'headers', {
                 value: headers,
                 enumerable: true,
-                writable: false
+                writable: false,
             });
             Object.defineProperty(this, 'data', {
                 value: data,
                 enumerable: true,
-                writable: false
+                writable: false,
             });
         }
     }
 
     /**
-     * 
+     *
      */
     class Progress {
         /**
-         * 
+         *
          * @param {Number} total 预计总字节数。
          * @param {Number} loaded 已加载/上传/下载字节数。
          */
@@ -541,15 +508,15 @@
             Object.defineProperty(this, 'total', {
                 value: +total,
                 enumerable: true,
-                writable: false
+                writable: false,
             });
             Object.defineProperty(this, 'loaded', {
                 value: +loaded,
                 enumerable: true,
-                writable: false
+                writable: false,
             });
         }
     }
 
     return RequestFactory;
-}));
+});
