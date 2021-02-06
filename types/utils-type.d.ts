@@ -1,4 +1,4 @@
-export namespace STEP.JSUtils {
+export namespace SKIT.JSUtils {
     export interface TypeUtil {}
 
     export interface TypeUtilConstructor<T extends TypeUtil = TypeUtil> {

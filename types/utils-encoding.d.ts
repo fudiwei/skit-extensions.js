@@ -1,4 +1,4 @@
-export namespace STEP.JSUtils {
+export namespace SKIT.JSUtils {
     export interface Base64EncodingUtil extends EncodingUtil {}
 
     export interface Base64EncodingUtilConstructor<T extends Base64EncodingUtil = Base64EncodingUtil> {

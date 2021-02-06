@@ -1,4 +1,4 @@
-export namespace STEP.JSUtils {
+export namespace SKIT.JSUtils {
     export interface StorageUtil {}
 
     export interface StorageUtilConstructor<T extends StorageUtil = StorageUtil> {

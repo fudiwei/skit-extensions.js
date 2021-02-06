@@ -16,25 +16,25 @@ export default {
     /**
      * 类型判断工具类。
      */
-    $$: UtilsType.STEP.JSUtils.$$,
+    $$: UtilsType.SKIT.JSUtils.$$,
 
     /**
      * 编码工具类。
      */
-    $$encoding: UtilsEncoding.STEP.JSUtils.$$encoding,
+    $$encoding: UtilsEncoding.SKIT.JSUtils.$$encoding,
 
     /**
      * 本地存储工具类。
      */
-    $$storage: UtilsStorage.STEP.JSUtils.$$storage,
+    $$storage: UtilsStorage.SKIT.JSUtils.$$storage,
 
     /**
      * 正则表达式工具类。
      */
-    $$regex: UtilsRegex.STEP.JSUtils.$$regex,
+    $$regex: UtilsRegex.SKIT.JSUtils.$$regex,
 
     /**
      * AJAX 请求工具类。
      */
-    $$request: UtilsRequest.STEP.JSUtils.$$request,
+    $$request: UtilsRequest.SKIT.JSUtils.$$request
 };
