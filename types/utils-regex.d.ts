@@ -1,4 +1,4 @@
-export namespace STEP.JSUtils {
+export namespace SKIT.JSUtils {
     export interface RegexUtil {}
 
     export interface RegexUtilConstructor<T extends RegexUtil = RegexUtil> {

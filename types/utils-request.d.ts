@@ -1,4 +1,4 @@
-export namespace STEP.JSUtils {
+export namespace SKIT.JSUtils {
     interface Request {
         /**
          * 获取或设置请求 URL。
