@@ -1,5 +1,5 @@
 {
-    "name": "@step/js-utils",
+    "name": "@skit/js-utils",
     "title": "js-utils",
     "description": "A collection of common tools & extensions.",
     "version": "1.0.0",
@@ -7,7 +7,7 @@
     "author": "Fu Diwei",
     "repository": {
         "type": "git",
-        "url": "https://github.com/fudiwei/step-jsutils.git"
+        "url": "https://github.com/fudiwei/skit-jsutils.git"
     },
     "license": "MIT",
     "scripts": {
