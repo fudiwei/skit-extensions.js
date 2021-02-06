@@ -1,4 +1,5 @@
-const { describe, it, expect } = require('chai');
+const { expect } = require('chai');
+const { describe, it } = require('mocha');
 
 require('../src/extends-Date.js');
 
