@@ -6,7 +6,7 @@ module.exports = {
         commonjs: true,
         amd: true,
     },
-    extends: ['eslint:recommended'],
+    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
     overrides: [
         {
             files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)',],
@@ -15,23 +15,22 @@ module.exports = {
             },
         },
     ],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
-        ecmaVersion: 6,
+        ecmaVersion: 2015,
         parser: '@typescript-eslint/parser',
-        sourceType: 'module',
+        sourceType: 'module'
     },
     plugins: ['@typescript-eslint', 'prettier'],
     rules: {
         'indent': ['error', 4, { SwitchCase: 1 }],
         'linebreak-style': ['warn', 'windows'],
+        'max-len': ['warn', 160],
         'no-console': 'off',
         'no-extra-boolean-cast': 'off',
         'prettier/prettier': ['warn', { trailingComma: 'none' }],
         'quotes': ['error', 'single'],
         'semi': ['error', 'always'],
-        '@typescript-eslint/ban-ts-comment': 'warn',
-        '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/indent': ['error', 4, { VariableDeclarator: 4, SwitchCase: 1 }],
-        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/indent': 'off'
     },
 };
