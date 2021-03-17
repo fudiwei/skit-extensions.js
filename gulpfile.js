@@ -31,7 +31,7 @@ gulp.task('eslint', () => {
 
 gulp.task('mocha', () => {
     return gulp
-        .src(['test/**/*.test.js'])
+        .src(['tests/**/*.test.js'])
         .pipe(gulp$mocha({
             reporter: 'spec'
         }));
