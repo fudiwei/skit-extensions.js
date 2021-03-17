@@ -7,18 +7,9 @@ module.exports = {
         amd: true,
     },
     extends: ['eslint:recommended'],
-    globals: {
-        wx: true,
-        my: true,
-        swan: true,
-        tt: true,
-    },
     overrides: [
         {
-            files: [
-                '**/__tests__/*.{j,t}s?(x)',
-                '**/tests/unit/**/*.spec.{j,t}s?(x)',
-            ],
+            files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)',],
             env: {
                 mocha: true,
             },
