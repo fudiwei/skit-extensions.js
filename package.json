@@ -23,11 +23,11 @@
         "types/*"
     ],
     "devDependencies": {
-        "@babel/core": "^7.12.13",
-        "@babel/preset-env": "^7.12.13",
+        "@babel/core": "^7.13.10",
+        "@babel/preset-env": "^7.13.10",
         "@typescript-eslint/eslint-plugin": "^4.18.0",
         "@typescript-eslint/parser": "^4.18.0",
-        "chai": "^4.3.0",
+        "chai": "^4.3.4",
         "eslint": "^7.22.0",
         "eslint-plugin-prettier": "^3.3.1",
         "eslint-plugin-standard": "^5.0.0",
@@ -35,13 +35,13 @@
         "gulp-babel": "^8.0.0",
         "gulp-concat": "^2.6.1",
         "gulp-eslint": "^6.0.0",
-        "gulp-mocha": "^7.0.2",
+        "gulp-mocha": "^8.0.0",
         "gulp-rimraf": "^1.0.0",
         "gulp-sourcemaps": "^3.0.0",
         "gulp-strip-debug": "^3.0.0",
         "gulp-uglify": "^3.0.2",
         "gulp-util": "^3.0.8",
-        "mocha": "^8.2.1",
+        "mocha": "^8.3.2",
         "prettier": "^2.2.1"
     }
 }
