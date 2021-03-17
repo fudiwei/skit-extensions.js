@@ -1,28 +1,27 @@
 {
-    "name": "@skit/js-utils",
-    "title": "js-utils",
-    "description": "A collection of common tools & extensions.",
-    "version": "1.0.0",
+    "name": "@skit/extensions",
+    "title": "extensions.js",
+    "description": "A collection of extensions.",
+    "version": "0.0.1",
+    "author": "RHQYZ",
     "main": "dist/index.min.js",
-    "author": "Fu Diwei",
+    "typings": "types/index.d.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/fudiwei/skit-jsutils.git"
+        "url": "https://github.com/fudiwei/skit-extensions.js.git"
     },
     "license": "MIT",
     "scripts": {
         "clean": "gulp clean",
         "eslint": "gulp eslint",
         "test": "gulp mocha",
-        "build": "gulp dist --outputFiles=min --sourceMap=no",
-        "deploy": "npm run build && npm publish --access=public"
+        "build": "gulp dist --outputFiles=min --sourceMap=no"
     },
-    "typings": "types/index.d.ts",
     "files": [
+        "src/*",
         "dist/*",
         "types/*"
     ],
-    "dependencies": {},
     "devDependencies": {
         "@babel/core": "^7.12.13",
         "@babel/preset-env": "^7.12.13",
