@@ -1,5 +1,5 @@
 ; (function () {
-    Object.defineProperty(Array.prototype, '$findLast', {
+    Object.defineProperty(Array.prototype, '$findLastIndex', {
         value: function (predicate) {
             if (typeof predicate !== 'function') {
                 throw new TypeError('The first argument need to be a function');
@@ -9,16 +9,16 @@
             const len = O.length >>> 0;
             const thisArg = arguments[1];
 
-            let k = len - 1;
-            while (k >= 0) {
+            let k = 0;
+            while (k < len) {
                 const kValue = O[k];
                 if (predicate.call(thisArg, kValue, k, O)) {
-                    return kValue;
+                    return k;
                 }
-                k--;
+                k++;
             }
 
-            return undefined;
+            return -1;
         },
         enumerable: false,
         configurable: false,
