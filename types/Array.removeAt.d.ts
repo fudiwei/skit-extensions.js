@@ -4,5 +4,5 @@ declare interface Array<T> {
      * @param {Number} index
      * @returns {Array}
      */
-    $removeAt(index: number): Array<T>;
+    $removeAt(index: number): this;
 }

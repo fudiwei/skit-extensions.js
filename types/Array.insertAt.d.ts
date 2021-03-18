@@ -5,5 +5,5 @@ declare interface Array<T> {
      * @param {Object} value
      * @returns {Array}
      */
-    $insertAt(index: number, value: T): Array<T>;
+    $insertAt(index: number, value: T): this;
 }
