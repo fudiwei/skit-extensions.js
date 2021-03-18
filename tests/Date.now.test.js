@@ -14,6 +14,5 @@ describe('Date', () => {
         expect(now.getHours()).to.be.equal(date.getHours());
         expect(now.getMinutes()).to.be.equal(date.getMinutes());
         expect(now.getSeconds()).to.be.equal(date.getSeconds());
-        expect(now.getMilliseconds()).to.be.equal(date.getMilliseconds());
     });
 });
