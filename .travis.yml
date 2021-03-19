@@ -1,0 +1,18 @@
+﻿language: node_js
+
+os:
+    - linux
+
+node_js:
+    - '12'
+
+before_install:
+    - if [[ "$TRAVIS_OS_NAME" == "linux"                      ]] ; then sudo apt-get -qq update        ; fi
+    - if [[ "$TRAVIS_OS_NAME" == "linux" && ! $(which expect) ]] ; then sudo apt-get install -y expect ; fi
+
+install:
+    - 'npm install'
+
+script:
+    - 'npm run test'
+    - 'npm run build'
