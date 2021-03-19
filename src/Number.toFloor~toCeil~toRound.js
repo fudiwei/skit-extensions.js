@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     Object.defineProperty(Number.prototype, '$toFloor', {
         value: function (digits = 0) {
             if (!(digits >= 0 && digits <= 100)) {
@@ -17,7 +17,7 @@
             return Number.isNaN(+str) ? 'NaN' : str;
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 
     Object.defineProperty(Number.prototype, '$toCeil', {
@@ -38,7 +38,7 @@
             return Number.isNaN(+str) ? 'NaN' : str;
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 
     Object.defineProperty(Number.prototype, '$toRound', {
@@ -59,6 +59,6 @@
             return Number.isNaN(+str) ? 'NaN' : str;
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 })();

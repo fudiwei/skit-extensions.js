@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     Object.defineProperty(Array.prototype, '$orderBy', {
         value: function (selectorFn) {
             if (selectorFn === undefined) {
@@ -21,7 +21,7 @@
             return this.sort(compareFn);
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 
     Object.defineProperty(Array.prototype, '$orderByDesc', {
@@ -46,6 +46,6 @@
             return this.sort(compareFn);
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 })();

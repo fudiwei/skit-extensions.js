@@ -44,5 +44,8 @@
         "lodash.template": ">=4.5.0",
         "mocha": "^8.3.2",
         "prettier": "^2.2.1"
+    },
+    "dependencies": {
+        "eslint-plugin-mocha": "^8.1.0"
     }
 }

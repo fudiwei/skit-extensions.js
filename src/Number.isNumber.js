@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     Object.defineProperty(Number, '$isNumber', {
         value: function (val) {
             if (typeof val === 'number') {
@@ -13,6 +13,6 @@
             return false;
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 })();

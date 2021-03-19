@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     Object.defineProperty(Array.prototype, '$findLast', {
         value: function (predicate) {
             if (typeof predicate !== 'function') {
@@ -21,6 +21,6 @@
             return undefined;
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 })();

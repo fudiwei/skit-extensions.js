@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     Object.defineProperty(Date.prototype, '$format', {
         value: function (format = 'yyyy-MM-dd hh:mm:ss') {
             const O = {
@@ -9,7 +9,7 @@
                 'm+': this.getMinutes(),
                 's+': this.getSeconds(),
                 'q+': Math.floor((this.getMonth() + 3) / 3),
-                'f': this.getMilliseconds(),
+                'f': this.getMilliseconds()
             };
 
             if (/(y+)/.test(format)) {
@@ -25,6 +25,6 @@
             return format;
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 })();

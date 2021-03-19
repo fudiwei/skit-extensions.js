@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     if (Object.prototype.toString.call(Promise) !== '[object Function]') {
         // `Promise` is not supported.
         return;
@@ -11,6 +11,6 @@
             });
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 })();

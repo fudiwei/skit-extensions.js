@@ -4,16 +4,16 @@ module.exports = {
         browser: true,
         node: true,
         commonjs: true,
-        amd: true,
+        amd: true
     },
-    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:mocha/recommended'],
     overrides: [
         {
-            files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)',],
+            files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
             env: {
-                mocha: true,
-            },
-        },
+                mocha: true
+            }
+        }
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -21,7 +21,7 @@ module.exports = {
         parser: '@typescript-eslint/parser',
         sourceType: 'module'
     },
-    plugins: ['@typescript-eslint', 'prettier'],
+    plugins: ['@typescript-eslint', 'prettier', 'mocha'],
     rules: {
         'indent': ['error', 4, { SwitchCase: 1 }],
         'linebreak-style': ['warn', 'windows'],
@@ -31,6 +31,7 @@ module.exports = {
         'prettier/prettier': ['warn', { trailingComma: 'none' }],
         'quotes': ['error', 'single'],
         'semi': ['error', 'always'],
-        '@typescript-eslint/indent': 'off'
-    },
+        '@typescript-eslint/indent': 'off',
+        '@typescript-eslint/no-var-requires': 'off'
+    }
 };

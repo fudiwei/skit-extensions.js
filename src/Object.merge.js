@@ -1,4 +1,4 @@
-﻿; (function () {
+﻿(function () {
     const _isObjectLike = (value) => {
         const type = typeof value;
         return value !== null && (type === 'object' || type === 'function');

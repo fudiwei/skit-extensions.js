@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     Object.defineProperty(Array.prototype, '$distinct', {
         value: function (comparerFn) {
             if (comparerFn === undefined) {
@@ -24,6 +24,6 @@
             return results;
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 })();

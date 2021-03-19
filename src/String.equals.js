@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     const _isString = (obj) => {
         return '[object String]' === Object.prototype.toString.call(obj);
     };
@@ -12,7 +12,7 @@
             return str1 === str2;
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 
     Object.defineProperty(String, '$equalsIgnoreCase', {
@@ -24,7 +24,6 @@
             return str1.toLowerCase() === str2.toLowerCase();
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
-
 })();

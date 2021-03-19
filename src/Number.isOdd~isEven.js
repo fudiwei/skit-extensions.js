@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     const _isNumber = (val) => {
         if (typeof val === 'number') {
             // Discard Infinity and NaN
@@ -25,7 +25,7 @@
             return !!(~~num & 1);
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 
     Object.defineProperty(Number, '$isEven', {
@@ -41,6 +41,6 @@
             return !(~~num & 1);
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 })();

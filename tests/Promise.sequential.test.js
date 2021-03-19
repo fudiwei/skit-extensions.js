@@ -4,7 +4,7 @@ const { describe, it } = require('mocha');
 require('../src/Promise.sequential.js');
 
 describe('Promise', () => {
-    it('Promise.$sequential', () => {
+    it('Promise.$sequential', (done) => {
         let promiseInterval = 50;
         let promiseResult = { ret: true };
         let promiseCount = 10;
@@ -20,6 +20,9 @@ describe('Promise', () => {
             })
             .catch(() => {
                 return;
+            })
+            .finally(() => {
+                done();
             });
     });
 });

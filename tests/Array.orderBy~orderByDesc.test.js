@@ -10,17 +10,17 @@ describe('Array', () => {
         expect(numbers).to.deep.equal([1, 2, 3, 4, 5]);
 
         const items = [
-            { 'user': 'fred', 'age': 48 },
-            { 'user': 'barney', 'age': 36 },
-            { 'user': 'tom', 'age': 40 },
-            { 'user': 'jack', 'age': 34 }
+            { user: 'fred', age: 48 },
+            { user: 'barney', age: 36 },
+            { user: 'tom', age: 40 },
+            { user: 'jack', age: 34 }
         ];
-        items.$orderBy(e => e.age);
+        items.$orderBy((e) => e.age);
         expect(items).to.deep.equal([
-            { 'user': 'jack', 'age': 34 },
-            { 'user': 'barney', 'age': 36 },
-            { 'user': 'tom', 'age': 40 },
-            { 'user': 'fred', 'age': 48 }
+            { user: 'jack', age: 34 },
+            { user: 'barney', age: 36 },
+            { user: 'tom', age: 40 },
+            { user: 'fred', age: 48 }
         ]);
     });
 
@@ -30,17 +30,17 @@ describe('Array', () => {
         expect(numbers).to.deep.equal([5, 4, 3, 2, 1]);
 
         const items = [
-            { 'user': 'fred', 'age': 48 },
-            { 'user': 'barney', 'age': 36 },
-            { 'user': 'tom', 'age': 40 },
-            { 'user': 'jack', 'age': 34 }
+            { user: 'fred', age: 48 },
+            { user: 'barney', age: 36 },
+            { user: 'tom', age: 40 },
+            { user: 'jack', age: 34 }
         ];
-        items.$orderByDesc(e => e.age);
+        items.$orderByDesc((e) => e.age);
         expect(items).to.deep.equal([
-            { 'user': 'fred', 'age': 48 },
-            { 'user': 'tom', 'age': 40 },
-            { 'user': 'barney', 'age': 36 },
-            { 'user': 'jack', 'age': 34 }
+            { user: 'fred', age: 48 },
+            { user: 'tom', age: 40 },
+            { user: 'barney', age: 36 },
+            { user: 'jack', age: 34 }
         ]);
     });
 });

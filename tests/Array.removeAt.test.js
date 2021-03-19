@@ -11,3 +11,4 @@ describe('Array', () => {
         expect(array).to.deep.equal([0, 1, 2, 3, 4]);
     });
 });
+()();

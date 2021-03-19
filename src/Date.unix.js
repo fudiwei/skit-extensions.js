@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     Object.defineProperty(Date.prototype, '$unix', {
         value: function (ts) {
             if (ts === undefined) {
@@ -13,6 +13,6 @@
             }
         },
         enumerable: false,
-        configurable: false,
+        configurable: false
     });
 })();

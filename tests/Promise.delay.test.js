@@ -4,7 +4,7 @@ const { describe, it } = require('mocha');
 require('../src/Promise.delay.js');
 
 describe('Promise', () => {
-    it('Promise.$delay', () => {
+    it('Promise.$delay', (done) => {
         let promiseInterval = 50;
         let promiseResult = { ret: true };
         let promiseStartTime = new Date();
@@ -16,6 +16,9 @@ describe('Promise', () => {
             })
             .catch(() => {
                 return;
+            })
+            .finally(() => {
+                done();
             });
 
         Promise.$delay(promiseInterval, promiseResult)
@@ -26,6 +29,9 @@ describe('Promise', () => {
             })
             .catch(() => {
                 return;
+            })
+            .finally(() => {
+                done();
             });
     });
 });
