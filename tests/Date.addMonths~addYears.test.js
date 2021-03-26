@@ -11,7 +11,7 @@ describe('Date', () => {
     });
 
     it('Date.prototype.$addYears', () => {
-        expect(new Date('2020/01/31').$addMonths(1).valueOf()).to.be.equal(new Date('2021/01/31').valueOf());
-        expect(new Date('2020/02/29').$addMonths(1).valueOf()).to.be.equal(new Date('2021/02/28').valueOf());
+        expect(new Date('2020/01/31').$addYears(1).valueOf()).to.be.equal(new Date('2021/01/31').valueOf());
+        expect(new Date('2020/02/29').$addYears(1).valueOf()).to.be.equal(new Date('2021/02/28').valueOf());
     });
 });
