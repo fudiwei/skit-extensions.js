@@ -5,7 +5,7 @@
                 throw new TypeError('The first argument must be a number.');
             }
 
-            this.setMonth(this.getMonth() + months);
+            this.setMonth((this.getMonth() + months).toFixed());
             return this;
         },
         enumerable: false,
@@ -18,7 +18,7 @@
                 throw new TypeError('The first argument must be a number.');
             }
 
-            this.setFullYear(this.getFullYear() + years);
+            this.setFullYear((this.getFullYear() + years).toFixed());
             return this;
         },
         enumerable: false,

@@ -5,7 +5,7 @@
                 throw new TypeError('The first argument must be a number.');
             }
 
-            this.setMilliseconds(this.getMilliseconds() + milliseconds);
+            this.setMilliseconds((this.getMilliseconds() + milliseconds).toFixed());
             return this;
         },
         enumerable: false,
@@ -18,7 +18,7 @@
                 throw new TypeError('The first argument must be a number.');
             }
 
-            this.setSeconds(this.getSeconds() + seconds);
+            this.setSeconds((this.getSeconds() + seconds).toFixed());
             return this;
         },
         enumerable: false,
@@ -31,7 +31,7 @@
                 throw new TypeError('The first argument must be a number.');
             }
 
-            this.setMinutes(this.getMinutes() + minutes);
+            this.setMinutes((this.getMinutes() + minutes).toFixed());
             return this;
         },
         enumerable: false,
@@ -44,7 +44,7 @@
                 throw new TypeError('The first argument must be a number.');
             }
 
-            this.setHours(this.getHours() + hours);
+            this.setHours((this.getHours() + hours).toFixed());
             return this;
         },
         enumerable: false,
@@ -57,7 +57,7 @@
                 throw new TypeError('The first argument must be a number.');
             }
 
-            this.setDate(this.getDate() + days);
+            this.setDate((this.getDate() + days).toFixed());
             return this;
         },
         enumerable: false,
