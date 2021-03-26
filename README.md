@@ -20,13 +20,13 @@
 
 ## 用法
 
-安装：
+### 安装：
 
 ```shell
 npm install @skit/extensions
 ```
 
-导入：
+### 导入：
 
 ```javascript
 /* require */
@@ -36,6 +36,12 @@ require('@skit/extensions');
 import '@skit/extensions';
 ```
 
-API:
+### API:
 
 请参考 _/types/\*.d.ts_ 下的声明文件。
+
+---
+
+## 更新记录
+
+请参阅 [CHANGELOG](./CHANGELOG.md)。
