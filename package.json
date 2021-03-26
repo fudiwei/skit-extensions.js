@@ -2,7 +2,7 @@
     "name": "@skit/extensions",
     "title": "extensions.js",
     "description": "A collection of extensions.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "RHQYZ",
     "main": "dist/index.min.js",
     "typings": "types/index.d.ts",
