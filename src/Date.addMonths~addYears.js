@@ -3,11 +3,8 @@
     const _DAYS_TO_MONTH_365 = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365];
 
     const _isLeapYear = (year = 0) => {
-        if (typeof year !== 'number')
-            throw new TypeError();
-        if (year % 1 !== 0)
-            throw new RangeError();
-
+        if (typeof year !== 'number') throw new TypeError();
+        if (year % 1 !== 0) throw new RangeError();
         return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
     };
 
