@@ -2,7 +2,7 @@
     "name": "@skit/extensions",
     "title": "extensions.js",
     "description": "A collection of extensions.",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "author": "Fu Diwei",
     "main": "dist/index.min.js",
     "typings": "types/index.d.ts",
