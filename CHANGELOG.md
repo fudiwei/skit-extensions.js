@@ -2,6 +2,18 @@
 
 ---
 
+## Release 0.0.5
+
+-   新增 `Array.prototype.$toSnakeCase` 扩展方法。
+
+-   新增 `Array.prototype.$toCamelCase` 扩展方法。
+
+-   新增 `Array.prototype.$toPascalCase` 扩展方法。
+
+-   新增 `Array.prototype.$toKebabCase` 扩展方法。
+
+-   修复 `Array.prototype.$findLastIndex` 扩展方法的实现错误。
+
 ## Release 0.0.4
 
 -   新增 `Array.prototype.$shuffle`、`Array.$shuffle` 扩展方法。
