@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/triple-slash-reference */
 /// <reference path="./Array.distinct.d.ts" />
 /// <reference path="./Array.findLast.d.ts" />
 /// <reference path="./Array.findLastIndex.d.ts" />

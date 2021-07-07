@@ -31,6 +31,7 @@ module.exports = {
         'prettier/prettier': ['warn', { trailingComma: 'none' }],
         'quotes': ['error', 'single'],
         'semi': ['error', 'always'],
+        '@typescript-eslint/ban-types': 'off',
         '@typescript-eslint/indent': 'off',
         '@typescript-eslint/no-var-requires': 'off'
     }

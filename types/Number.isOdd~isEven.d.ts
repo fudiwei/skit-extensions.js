@@ -1,4 +1,4 @@
-interface NumberConstructor {
+declare interface NumberConstructor {
     /**
      * 判断一个 Number 是否是奇数。
      * @param {Number}

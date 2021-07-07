@@ -1,4 +1,4 @@
-interface Date {
+declare interface Date {
     /**
      * 将指定的月数加到此 Date 对象的值上。此方法会改变原 Date。
      * 注意因月份天数不等时的特殊处理。

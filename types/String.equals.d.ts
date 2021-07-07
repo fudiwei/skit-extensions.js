@@ -1,4 +1,4 @@
-interface StringConstructor {
+declare interface StringConstructor {
     /**
      * 判断两个字符串是否相等。
      * @param {String} str1

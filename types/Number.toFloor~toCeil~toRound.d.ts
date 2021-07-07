@@ -1,4 +1,4 @@
-interface Number {
+declare interface Number {
     /**
      * 使用去尾法来格式化一个数。
      * @param {Number} [digits] （可选）保留小数位数。

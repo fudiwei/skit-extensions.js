@@ -1,4 +1,4 @@
-interface Date {
+declare interface Date {
     /**
      * 将指定的毫秒数加到此 Date 对象的值上。此方法会改变原 Date。
      * @param {Number} milliseconds 毫秒数。
