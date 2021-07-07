@@ -1,8 +1,8 @@
 {
     "name": "@skit/extensions",
     "title": "extensions.js",
-    "description": "A collection of extensions.",
-    "version": "0.0.4",
+    "description": "A collection of extensions. JavaScript 常用原型扩展工具类。",
+    "version": "0.0.5",
     "author": "Fu Diwei",
     "main": "dist/index.min.js",
     "typings": "types/index.d.ts",
