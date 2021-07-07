@@ -9,13 +9,13 @@
             const len = O.length >>> 0;
             const thisArg = arguments[1];
 
-            let k = 0;
-            while (k < len) {
+            let k = len - 1;
+            while (k >= 0) {
                 const kValue = O[k];
                 if (predicate.call(thisArg, kValue, k, O)) {
                     return k;
                 }
-                k++;
+                k--;
             }
 
             return -1;

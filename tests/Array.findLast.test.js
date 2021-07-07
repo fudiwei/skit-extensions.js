@@ -5,12 +5,6 @@ require('../src/Array.findLast.js');
 
 describe('Array', () => {
     it('Array.prototype.$findLast', () => {
-        const inventory = [
-            { name: 'apples', quantity: 2 },
-            { name: 'bananas', quantity: 0 },
-            { name: 'cherries', quantity: 5 }
-        ];
-        const findCherries = (fruit) => fruit.name === 'cherries';
-        expect(inventory.$findLast(findCherries).quantity).to.be.equal(5);
+        expect([1, 2, 3, 4].$findLast((e) => e % 2 == 1)).to.be.equal(3);
     });
 });
