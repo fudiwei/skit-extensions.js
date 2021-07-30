@@ -4,7 +4,7 @@
 [![NPM Download](https://img.shields.io/npm/dm/@skit/extensions.svg?sanitize=true)](https://www.npmjs.com/package/@skit/extensions)
 [![Build Status](https://travis-ci.org/fudiwei/skit-extensions.js.svg?branch=master)](https://travis-ci.org/fudiwei/skit-extensions.js)
 [![Dependency Status](https://david-dm.org/fudiwei/skit-extensions.js.svg)](https://david-dm.org/fudiwei/skit-extensions.js)
-[![GitHub License](https://img.shields.io/github/license/fudiwei/skit-extensions.js)](https://github.com/fudiwei/skit-extensions.js/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/fudiwei/skit-extensions.js)](https://mit-license.org/)
 
 ---
 
