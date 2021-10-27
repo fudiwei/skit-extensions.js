@@ -1,0 +1,68 @@
+{
+    "name": "@skit/extensions",
+    "title": "extensions.js",
+    "description": "A powerful JavaScript utility library for built-in object extensions. 一个多功能的 JavaScript 内置对象原型链扩展方法工具库。",
+    "keywords": [
+        "prototype",
+        "extension",
+        "extensions",
+        "js-extension",
+        "javascript-extensions",
+        "extra",
+        "extras",
+        "js-extra",
+        "javascript-extras",
+        "utility",
+        "utilities",
+        "js-utility",
+        "javascript-utilities",
+        "tool",
+        "tools",
+        "js-tool",
+        "javascript-tools"
+    ],
+    "version": "0.0.8",
+    "author": "Fu Diwei",
+    "main": "dist/index.min.js",
+    "typings": "types/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fudiwei/skit-extensions.js.git"
+    },
+    "license": "MIT",
+    "scripts": {
+        "clean": "gulp clean",
+        "eslint": "gulp eslint",
+        "test": "gulp mocha",
+        "build": "gulp dist --outputFiles=min --sourceMap=no"
+    },
+    "files": [
+        "src/*",
+        "dist/*",
+        "types/*"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.13.10",
+        "@babel/preset-env": "^7.13.10",
+        "@typescript-eslint/eslint-plugin": "^5.2.0",
+        "@typescript-eslint/parser": "^5.2.0",
+        "chai": "^4.3.4",
+        "eslint": "^7.32.0",
+        "eslint-plugin-mocha": "^8.2.0",
+        "eslint-plugin-prettier": "^3.4.1",
+        "eslint-plugin-standard": "^5.0.0",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-eslint": "^6.0.0",
+        "gulp-mocha": "^8.0.0",
+        "gulp-rimraf": "^1.0.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-strip-debug": "^4.0.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-util": "^3.0.8",
+        "lodash.template": ">=4.5.0",
+        "mocha": "^8.3.2",
+        "prettier": "^2.2.1"
+    }
+}
