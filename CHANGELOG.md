@@ -2,46 +2,62 @@
 
 ---
 
+## Release 0.0.9
+
+-   **Added** `Date.$unix`.
+
 ## Release 0.0.8
 
--   新增 `Date.prototype.$zeroTime` 扩展方法。
+-   **Added** `Date.prototype.$zeroTime`.
 
--   新增 `Boolean.$from` 扩展方法。
+-   **Added** `Boolean.$from`.
 
 ## Release 0.0.7
 
--   修复 TypeScript 声明部分缺失的问题。
+-   **Fixed** TypeScript declaration missing.
 
 ## Release 0.0.6
 
--   修复 TypeScript 声明部分缺失的问题。
+-   **Fixed** TypeScript declaration missing.
 
 ## Release 0.0.5
 
--   新增 `Array.prototype.$toSnakeCase` 扩展方法。
+-   **Added** `String.prototype.$toSnakeCase`.
 
--   新增 `Array.prototype.$toCamelCase` 扩展方法。
+-   **Added** `String.prototype.$toCamelCase`.
 
--   新增 `Array.prototype.$toPascalCase` 扩展方法。
+-   **Added** `String.prototype.$toPascalCase`.
 
--   新增 `Array.prototype.$toKebabCase` 扩展方法。
+-   **Added** `String.prototype.$toKebabCase`.
 
--   修复 `Array.prototype.$findLastIndex` 扩展方法的实现错误。
+-   **Fixed** `Array.prototype.$findLastIndex`.
 
 ## Release 0.0.4
 
--   新增 `Array.prototype.$shuffle`、`Array.$shuffle` 扩展方法。
+-   **Added** `Array.prototype.$shuffle`, `Array.$shuffle`.
 
 ## Release 0.0.3
 
--   修复 `Date.prototype.$addMonths`、`Date.prototype.$addYears` 扩展方法结果不正确的问题。
+-   **Fixed** `Date.prototype.$addMonths`.
+
+-   **Fixed** `Date.prototype.$addYears`.
 
 ## Release 0.0.2
 
--   新增 `Date.prototype.$addMilliseconds`、`Date.prototype.$addSeconds`、`Date.prototype.$addMinutes`、`Date.prototype.$addMinutes`、`Date.prototype.$addDays` 扩展方法。
+-   **Added** `Date.prototype.$addMilliseconds`.
 
--   新增 `Date.prototype.$addMonths`、`Date.prototype.$addYears` 扩展方法。
+-   **Added** `Date.prototype.$addSeconds`.
+
+-   **Added** `Date.prototype.$addMinutes`.
+
+-   **Added** `Date.prototype.$addMinutes`.
+
+-   **Added** `Date.prototype.$addDays`.
+
+-   **Added** `Date.prototype.$addMonths`.
+
+-   **Added** `Date.prototype.$addYears`.
 
 ## Release 0.0.1
 
--   首次发布。
+-   First Release.
