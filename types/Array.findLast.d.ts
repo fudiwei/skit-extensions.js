@@ -13,5 +13,8 @@ declare interface Array<T> {
      * @param {Object} [thisArg]
      * @returns {Object}
      */
-    $findLast<S extends T>(predicate: (this: void, value: T, index: number, obj: T[]) => value is S, thisArg?: any): S | undefined;
+    $findLast<S extends T>(
+        predicate: (this: void, value: T, index: number, obj: T[]) => value is S,
+        thisArg?: any
+    ): S | undefined;
 }

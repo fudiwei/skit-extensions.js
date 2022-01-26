@@ -6,7 +6,7 @@ module.exports = {
         commonjs: true,
         amd: true
     },
-    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:mocha/recommended'],
+    extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:mocha/recommended'],
     overrides: [
         {
             files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
@@ -30,9 +30,6 @@ module.exports = {
         'no-extra-boolean-cast': 'off',
         'prettier/prettier': ['warn', { trailingComma: 'none' }],
         'quotes': ['error', 'single'],
-        'semi': ['error', 'always'],
-        '@typescript-eslint/ban-types': 'off',
-        '@typescript-eslint/indent': 'off',
-        '@typescript-eslint/no-var-requires': 'off'
+        'semi': ['error', 'always']
     }
 };
