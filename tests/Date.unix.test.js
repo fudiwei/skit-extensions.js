@@ -4,6 +4,12 @@ const { describe, it } = require('mocha');
 require('../src/Date.unix.js');
 
 describe('Date', () => {
+    it('Date.$uinx(timestamp)', () => {
+        const date = new Date('1970-01-01 00:00:00');
+        const offset = new Date().getTimezoneOffset() * 60 * 1000;
+        expect(Date.$unix(0).getTime()).to.be.equals(date.getTime() - offset);
+    });
+
     it('Date.prototype.$uinx(timestamp)', () => {
         const date = new Date('1970-01-01 00:00:00');
         const offset = new Date().getTimezoneOffset() * 60 * 1000;
