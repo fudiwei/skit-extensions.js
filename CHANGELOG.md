@@ -2,6 +2,12 @@
 
 ---
 
+## Release 0.0.10
+
+-   **Added** `Array.prototype.$fillBy`.
+
+-   **Fixed** `Array.prototype.$distinct` not correctly comparing _NaN_.
+
 ## Release 0.0.9
 
 -   **Added** `Date.$unix`.
