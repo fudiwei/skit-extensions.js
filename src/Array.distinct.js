@@ -2,7 +2,7 @@
     Object.defineProperty(Array.prototype, '$distinct', {
         value: function (comparerFn) {
             if (comparerFn === undefined) {
-                comparerFn = (x, y) => x === y;
+                comparerFn = (x, y) => Object.is(x, y);
             }
 
             if (typeof comparerFn !== 'function') {
