@@ -14,7 +14,7 @@ A powerful JavaScript utility library for built-in object extensions.
 
 ## Features
 
--   Deliveries several common extras to some built-in objects.
+-   Deliveries several common extended methods to some built-in objects (The names of all APIs are based on `$` as prefix, no need to worry about forward compatibility with the ECMAScript standard).
 
 -   Independent modularity.
 
