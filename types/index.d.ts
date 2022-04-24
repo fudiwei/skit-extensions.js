@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/triple-slash-reference */
 /// <reference path="./Array.distinct.d.ts" />
+/// <reference path="./Array.fillBy.d.ts" />
 /// <reference path="./Array.findLast.d.ts" />
 /// <reference path="./Array.findLastIndex.d.ts" />
 /// <reference path="./Array.insertAt.d.ts" />

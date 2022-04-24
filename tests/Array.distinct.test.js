@@ -10,5 +10,8 @@ describe('Array', () => {
 
         const complexArray = [{ id: 1 }, { id: 1 }, { id: 2 }, { id: 3 }];
         expect(complexArray.$distinct((x, y) => x.id === y.id).length).to.be.equal(3);
+
+        const nanArray = [NaN, NaN, 0];
+        expect(nanArray.$distinct().length).to.be.equal(2);
     });
 });
