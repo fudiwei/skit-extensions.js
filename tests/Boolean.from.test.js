@@ -5,6 +5,8 @@ require('../src/Boolean.from.js');
 
 describe('Boolean', () => {
     it('Boolean.$from', () => {
+        assert.isFunction(Boolean.$from);
+
         assert.isTrue(Boolean.$from(true));
         assert.isFalse(Boolean.$from(false));
 

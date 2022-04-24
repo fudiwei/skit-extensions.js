@@ -5,6 +5,8 @@ require('../src/Promise.delay.js');
 
 describe('Promise', () => {
     it('Promise.$delay', (done) => {
+        assert.isFunction(Promise.$delay);
+
         let promiseInterval = 50;
         let promiseResult = { ret: true };
         let promiseStartTime = new Date();

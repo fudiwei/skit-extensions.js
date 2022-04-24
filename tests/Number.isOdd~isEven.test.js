@@ -5,6 +5,7 @@ require('../src/Number.isOdd~isEven.js');
 
 describe('Number', () => {
     it('Number.$isOdd', () => {
+        assert.isFunction(Number.$isOdd);
         assert.isTrue(Number.$isOdd(123));
         assert.isTrue(Number.$isOdd(123.0));
         assert.isTrue(Number.$isOdd(-123));
@@ -21,6 +22,7 @@ describe('Number', () => {
     });
 
     it('Number.$isEven', () => {
+        assert.isFunction(Number.$isEven);
         assert.isTrue(Number.$isEven(12));
         assert.isTrue(Number.$isEven(12.0));
         assert.isTrue(Number.$isEven(-12));

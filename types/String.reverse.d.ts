@@ -1,7 +1,7 @@
 declare interface String {
     /**
-     * 返回一个反转后的新字符串。
-     * @returns {String}
+     * 将字符串中字符的位置颠倒，并返回颠倒后的字符串。
+     * @returns {String} 颠倒后的字符串。
      */
     $reverse(): string;
 }

@@ -6,10 +6,6 @@
 
     Object.defineProperty(Promise, '$sequential', {
         value: function (promiseFns) {
-            if (!Array.isArray(promiseFns)) {
-                throw new TypeError('The first argument need to be an array of Promises.');
-            }
-
             return new Promise((resolve, reject) => {
                 let count = 0;
                 let results = [];
@@ -26,8 +22,7 @@
                         });
                 };
 
-                promiseFns = promiseFns.concat(() => Promise.resolve());
-                promiseFns.reduce(iterateeFunc, Promise.resolve(false)).then(() => resolve(results));
+                [...promiseFns, () => Promise.resolve()].reduce(iterateeFunc, Promise.resolve(false)).then(() => resolve(results));
             });
         },
         enumerable: false,

@@ -5,6 +5,8 @@ require('../src/Promise.sequential.js');
 
 describe('Promise', () => {
     it('Promise.$sequential', (done) => {
+        assert.isFunction(Promise.$sequential);
+
         let promiseInterval = 50;
         let promiseResult = { ret: true };
         let promiseCount = 10;
@@ -13,8 +15,8 @@ describe('Promise', () => {
 
         Promise.$sequential(promises)
             .then((reses) => {
-                assert.equal(reses.length, promiseCount);
-                assert.equal(reses[promiseCount - 1], promiseResult);
+                assert.strictEqual(reses.length, promiseCount);
+                assert.strictEqual(reses[promiseCount - 1], promiseResult);
                 assert.isAbove(new Date().getTime() - promiseInterval * promiseCount, promiseStartTime.getTime() - 1);
                 return;
             })

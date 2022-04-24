@@ -5,9 +5,11 @@ require('../src/Function.debounce.js');
 
 describe('Function', () => {
     it('Function.$debounce', (done) => {
+        assert.isFunction(Function.$debounce);
+
         let func = () => {
             debounceCount++;
-            assert.equal(debounceCount, 1);
+            assert.strictEqual(debounceCount, 1);
             assert.isAbove(new Date().getTime() - debounceInterval, debounceStartTime.getTime() - 1);
             done();
         };

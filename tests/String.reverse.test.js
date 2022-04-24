@@ -5,7 +5,8 @@ require('../src/String.reverse.js');
 
 describe('String', () => {
     it('String.prototype.$reverse', () => {
-        assert.equal('text'.$reverse(), 'txet');
-        assert.equal('emoji 😊 in text'.$reverse(), 'txet ni 😊 ijome');
+        assert.isFunction(String.prototype.$reverse);
+        assert.strictEqual('text'.$reverse(), 'txet');
+        assert.strictEqual('emoji 😊 in text'.$reverse(), 'txet ni 😊 ijome');
     });
 });

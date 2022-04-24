@@ -5,14 +5,15 @@ require('../src/String.toSnakeCase.js');
 
 describe('String', () => {
     it('String.prototype.$toSnakeCase', () => {
-        assert.equal('fooBar'.$toSnakeCase(), 'foo_bar');
-        assert.equal('foo-bar'.$toSnakeCase(), 'foo_bar');
-        assert.equal('FooBar'.$toSnakeCase(), 'foo_bar');
-        assert.equal('FOO_BAR'.$toSnakeCase(), 'foo_bar');
-        assert.equal('foo_bar'.$toSnakeCase(), 'foo_bar');
-        assert.equal('foo bar'.$toSnakeCase(), 'foo_bar');
-        assert.equal('Foo Bar'.$toSnakeCase(), 'foo_bar');
-        assert.equal('foo.bar'.$toSnakeCase(), 'foo_bar');
-        assert.equal('--FOO-BAR--'.$toSnakeCase(), 'foo_bar');
+        assert.isFunction(String.prototype.$toSnakeCase);
+        assert.strictEqual('fooBar'.$toSnakeCase(), 'foo_bar');
+        assert.strictEqual('foo-bar'.$toSnakeCase(), 'foo_bar');
+        assert.strictEqual('FooBar'.$toSnakeCase(), 'foo_bar');
+        assert.strictEqual('FOO_BAR'.$toSnakeCase(), 'foo_bar');
+        assert.strictEqual('foo_bar'.$toSnakeCase(), 'foo_bar');
+        assert.strictEqual('foo bar'.$toSnakeCase(), 'foo_bar');
+        assert.strictEqual('Foo Bar'.$toSnakeCase(), 'foo_bar');
+        assert.strictEqual('foo.bar'.$toSnakeCase(), 'foo_bar');
+        assert.strictEqual('--FOO-BAR--'.$toSnakeCase(), 'foo_bar');
     });
 });

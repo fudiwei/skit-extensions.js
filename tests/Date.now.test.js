@@ -5,14 +5,15 @@ require('../src/Date.now.js');
 
 describe('Date', () => {
     it('Date.$now', () => {
+        assert.isFunction(Date.$now);
+
         const date = new Date();
         const now = Date.$now();
-
-        assert.equal(now.getFullYear(), date.getFullYear());
-        assert.equal(now.getMonth(), date.getMonth());
-        assert.equal(now.getDate(), date.getDate());
-        assert.equal(now.getHours(), date.getHours());
-        assert.equal(now.getMinutes(), date.getMinutes());
-        assert.equal(now.getSeconds(), date.getSeconds());
+        assert.strictEqual(now.getFullYear(), date.getFullYear());
+        assert.strictEqual(now.getMonth(), date.getMonth());
+        assert.strictEqual(now.getDate(), date.getDate());
+        assert.strictEqual(now.getHours(), date.getHours());
+        assert.strictEqual(now.getMinutes(), date.getMinutes());
+        assert.strictEqual(now.getSeconds(), date.getSeconds());
     });
 });

@@ -5,24 +5,22 @@ require('../src/Date.format.js');
 
 describe('Date', () => {
     it('Date.prototype.$format', () => {
-        const now = new Date();
+        assert.isFunction(Date.prototype.$format);
 
-        assert.equal(now.$format('yyyy'), String(now.getFullYear()).padStart(4, '0'));
-        assert.equal(now.$format('MM'), String(now.getMonth() + 1).padStart(2, '0'));
-        assert.equal(now.$format('dd'), String(now.getDate()).padStart(2, '0'));
-        assert.equal(now.$format('HH'), String(now.getHours()).padStart(2, '0'));
-        assert.equal(now.$format('mm'), String(now.getMinutes()).padStart(2, '0'));
-        assert.equal(now.$format('ss'), String(now.getSeconds()).padStart(2, '0'));
-
-        assert.equal(now.$format('M'), String(now.getMonth() + 1));
-        assert.equal(now.$format('d'), String(now.getDate()));
-        assert.equal(now.$format('H'), String(now.getHours()));
-        assert.equal(now.$format('m'), String(now.getMinutes()));
-        assert.equal(now.$format('s'), String(now.getSeconds()));
-
-        assert.equal(now.$format('yyyy/MM/dd'),
-            `${String(now.getFullYear()).padStart(4, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}`
-        );
-        assert.equal(now.$format('H:m:s'), `${String(now.getHours())}:${String(now.getMinutes())}:${String(now.getSeconds())}`);
+        const date = new Date('2020/01/02 01:23:45');
+        assert.strictEqual(date.$format(), '2020-01-02 01:23:45');
+        assert.strictEqual(date.$format('yyyy'), '2020');
+        assert.strictEqual(date.$format('MM'), '01');
+        assert.strictEqual(date.$format('dd'), '02');
+        assert.strictEqual(date.$format('HH'), '01');
+        assert.strictEqual(date.$format('mm'), '23');
+        assert.strictEqual(date.$format('ss'), '45');
+        assert.strictEqual(date.$format('M'), '1');
+        assert.strictEqual(date.$format('d'), '2');
+        assert.strictEqual(date.$format('H'), '1');
+        assert.strictEqual(date.$format('m'), '23');
+        assert.strictEqual(date.$format('s'), '45');
+        assert.strictEqual(date.$format('yyyy/MM/dd'), '2020/01/02');
+        assert.strictEqual(date.$format('H:m:s'), '1:23:45');
     });
 });

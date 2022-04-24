@@ -9,7 +9,7 @@
                 return false;
             }
 
-            return str1 === str2;
+            return str1 == str2;
         },
         enumerable: false,
         configurable: false
@@ -21,7 +21,7 @@
                 return false;
             }
 
-            return str1.toLowerCase() === str2.toLowerCase();
+            return str1.toLowerCase() == str2.toLowerCase();
         },
         enumerable: false,
         configurable: false

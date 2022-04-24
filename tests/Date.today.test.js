@@ -5,15 +5,16 @@ require('../src/Date.today.js');
 
 describe('Date', () => {
     it('Date.$today', () => {
+        assert.isFunction(Date.$today);
+
         const date = new Date();
         const today = Date.$today();
-
-        assert.equal(today.getFullYear(), date.getFullYear());
-        assert.equal(today.getMonth(), date.getMonth());
-        assert.equal(today.getDate(), date.getDate());
-        assert.equal(today.getHours(), 0);
-        assert.equal(today.getMinutes(), 0);
-        assert.equal(today.getSeconds(), 0);
-        assert.equal(today.getMilliseconds(), 0);
+        assert.strictEqual(today.getFullYear(), date.getFullYear());
+        assert.strictEqual(today.getMonth(), date.getMonth());
+        assert.strictEqual(today.getDate(), date.getDate());
+        assert.strictEqual(today.getHours(), 0);
+        assert.strictEqual(today.getMinutes(), 0);
+        assert.strictEqual(today.getSeconds(), 0);
+        assert.strictEqual(today.getMilliseconds(), 0);
     });
 });

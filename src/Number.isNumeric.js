@@ -1,5 +1,5 @@
 (function () {
-    Object.defineProperty(Number, '$isNumber', {
+    Object.defineProperty(Number, '$isNumeric', {
         value: function (val) {
             if (typeof val === 'number') {
                 // Discard Infinity and NaN

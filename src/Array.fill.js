@@ -1,8 +1,8 @@
 (function () {
-    Object.defineProperty(Array.prototype, '$fillBy', {
+    Object.defineProperty(Array.prototype, '$fill', {
         value: function (valueFn, start, end) {
             if (typeof valueFn !== 'function') {
-                throw new TypeError('The first argument need to be a function');
+                throw new TypeError(valueFn + ' is not a function');
             }
 
             const O = Object(this);

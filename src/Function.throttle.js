@@ -1,10 +1,14 @@
 (function () {
     Object.defineProperty(Function, '$throttle', {
         value: function (fn, wait) {
-            if (typeof fn !== 'function') throw new TypeError('The first argument need to be a function');
+            if (typeof fn !== 'function')
+                throw new TypeError(fn + ' is not a function');
 
-            wait = +wait || 0;
-            if (!(wait >= 0)) throw new RangeError('The value of `wait` must be greater than zero.');
+            if (isNaN(wait) || Number.isNaN(wait)) {
+                throw new TypeError(wait + ' is not a number');
+            } else if (+wait < 0) {
+                throw new RangeError('The first argument must be greater than 0');
+            }
 
             let timer = null,
                 remaining = 0,

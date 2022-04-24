@@ -1,7 +1,7 @@
 ﻿(function () {
     Object.defineProperty(Array.prototype, '$shuffle', {
         value: function () {
-            const O = Object(this.slice());
+            const O = Array.prototype.slice.call(this);
             const len = O.length >>> 0;
 
             let index = -1,
@@ -21,11 +21,7 @@
 
     Object.defineProperty(Array, '$shuffle', {
         value: function (array) {
-            if (!Array.isArray(array)) {
-                throw new TypeError('The first argument need to be a array');
-            }
-
-            return array.$shuffle();
+            return Array.prototype.$shuffle.call(array);
         },
         enumerable: false,
         configurable: false

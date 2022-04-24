@@ -5,6 +5,7 @@ require('../src/Date.isWeekend.js');
 
 describe('Date', () => {
     it('Date.prototype.$isWeekend', () => {
+        assert.isFunction(Date.prototype.$isWeekend);
         assert.isTrue(new Date('2000-01-01 08:00:00').$isWeekend());  // Saturday
         assert.isTrue(new Date('2000-01-02 08:00:00').$isWeekend());  // Sunday
         assert.isFalse(new Date('2000-01-03 08:00:00').$isWeekend()); // Monday

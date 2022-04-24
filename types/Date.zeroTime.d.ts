@@ -1,7 +1,7 @@
 declare interface Date {
     /**
-     * 获取表示指定日期零点零分零秒的 Date 对象。
-     * @returns {Date}
+     * 获取一个新的表示当天零时的日期对象。
+     * @returns {Date} 一个表示当天零时的日期对象。
      */
     $zeroTime(): Date;
 }

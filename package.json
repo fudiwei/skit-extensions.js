@@ -21,7 +21,7 @@
         "js-tool",
         "javascript-tools"
     ],
-    "version": "0.0.10",
+    "version": "0.1.0",
     "author": "Fu Diwei",
     "main": "dist/index.min.js",
     "typings": "types/index.d.ts",
@@ -34,7 +34,9 @@
         "clean": "gulp clean",
         "eslint": "gulp eslint",
         "test": "gulp mocha",
-        "build": "gulp dist --outputFiles=min --sourceMap=no"
+        "build": "pnpm run build:both",
+        "build:min": "gulp dist --outputFiles=min",
+        "build:both": "gulp dist --outputFiles=both"
     },
     "files": [
         "src/*",

@@ -5,9 +5,9 @@
     }
 
     Object.defineProperty(Promise, '$delay', {
-        value: function (ms = 0, result) {
+        value: function (wait = 0, result) {
             return new Promise((resolve) => {
-                setTimeout(() => resolve(result), ms);
+                setTimeout(() => resolve(result), wait);
             });
         },
         enumerable: false,

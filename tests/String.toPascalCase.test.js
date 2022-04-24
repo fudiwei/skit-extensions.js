@@ -5,14 +5,15 @@ require('../src/String.toPascalCase.js');
 
 describe('String', () => {
     it('String.prototype.$toPascalCase', () => {
-        assert.equal('fooBar'.$toPascalCase(), 'FooBar');
-        assert.equal('foo-bar'.$toPascalCase(), 'FooBar');
-        assert.equal('FooBar'.$toPascalCase(), 'FooBar');
-        assert.equal('FOO_BAR'.$toPascalCase(), 'FooBar');
-        assert.equal('foo_bar'.$toPascalCase(), 'FooBar');
-        assert.equal('foo bar'.$toPascalCase(), 'FooBar');
-        assert.equal('Foo Bar'.$toPascalCase(), 'FooBar');
-        assert.equal('foo.bar'.$toPascalCase(), 'FooBar');
-        assert.equal('--FOO-BAR--'.$toPascalCase(), 'FooBar');
+        assert.isFunction(String.prototype.$toPascalCase);
+        assert.strictEqual('fooBar'.$toPascalCase(), 'FooBar');
+        assert.strictEqual('foo-bar'.$toPascalCase(), 'FooBar');
+        assert.strictEqual('FooBar'.$toPascalCase(), 'FooBar');
+        assert.strictEqual('FOO_BAR'.$toPascalCase(), 'FooBar');
+        assert.strictEqual('foo_bar'.$toPascalCase(), 'FooBar');
+        assert.strictEqual('foo bar'.$toPascalCase(), 'FooBar');
+        assert.strictEqual('Foo Bar'.$toPascalCase(), 'FooBar');
+        assert.strictEqual('foo.bar'.$toPascalCase(), 'FooBar');
+        assert.strictEqual('--FOO-BAR--'.$toPascalCase(), 'FooBar');
     });
 });
