@@ -1,4 +1,4 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
 require('../src/Date.isToday.js');
@@ -9,8 +9,8 @@ describe('Date', () => {
         const yesterday = new Date(now.getSeconds() - 24 * 60 * 60 * 1000);
         const tomorrow = new Date(now.getSeconds() + 24 * 60 * 60 * 1000);
 
-        expect(now.$isToday()).to.be.true;
-        expect(yesterday.$isToday()).to.be.false;
-        expect(tomorrow.$isToday()).to.be.false;
+        assert.isTrue(now.$isToday());
+        assert.isFalse(yesterday.$isToday());
+        assert.isFalse(tomorrow.$isToday());
     });
 });

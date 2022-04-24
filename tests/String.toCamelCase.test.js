@@ -1,18 +1,18 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
 require('../src/String.toCamelCase.js');
 
 describe('String', () => {
     it('String.prototype.$toCamelCase', () => {
-        expect('fooBar'.$toCamelCase()).to.be.equals('fooBar');
-        expect('foo-bar'.$toCamelCase()).to.be.equals('fooBar');
-        expect('FooBar'.$toCamelCase()).to.be.equals('fooBar');
-        expect('FOO_BAR'.$toCamelCase()).to.be.equals('fooBar');
-        expect('foo_bar'.$toCamelCase()).to.be.equals('fooBar');
-        expect('foo bar'.$toCamelCase()).to.be.equals('fooBar');
-        expect('Foo Bar'.$toCamelCase()).to.be.equals('fooBar');
-        expect('foo.bar'.$toCamelCase()).to.be.equals('fooBar');
-        expect('--FOO-BAR--'.$toCamelCase()).to.be.equals('fooBar');
+        assert.equal('fooBar'.$toCamelCase(), 'fooBar');
+        assert.equal('foo-bar'.$toCamelCase(), 'fooBar');
+        assert.equal('FooBar'.$toCamelCase(), 'fooBar');
+        assert.equal('FOO_BAR'.$toCamelCase(), 'fooBar');
+        assert.equal('foo_bar'.$toCamelCase(), 'fooBar');
+        assert.equal('foo bar'.$toCamelCase(), 'fooBar');
+        assert.equal('Foo Bar'.$toCamelCase(), 'fooBar');
+        assert.equal('foo.bar'.$toCamelCase(), 'fooBar');
+        assert.equal('--FOO-BAR--'.$toCamelCase(), 'fooBar');
     });
 });

@@ -1,31 +1,31 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
 require('../src/Boolean.from.js');
 
 describe('Boolean', () => {
     it('Boolean.$from', () => {
-        expect(Boolean.$from('true')).to.be.true;
-        expect(Boolean.$from('True')).to.be.true;
-        expect(Boolean.$from('truly')).to.be.false;
-        expect(Boolean.$from('false')).to.be.false;
-        expect(Boolean.$from('1')).to.be.true;
-        expect(Boolean.$from('0')).to.be.false;
+        assert.isTrue(Boolean.$from(true));
+        assert.isFalse(Boolean.$from(false));
 
-        expect(Boolean.$from(0)).to.be.false;
-        expect(Boolean.$from(0.0)).to.be.false;
-        expect(Boolean.$from(0n)).to.be.false;
-        expect(Boolean.$from(0.1)).to.be.true;
-        expect(Boolean.$from(1)).to.be.true;
-        expect(Boolean.$from(-1)).to.be.true;
-        expect(Boolean.$from(1234567890n)).to.be.true;
+        assert.isTrue(Boolean.$from('true'));
+        assert.isTrue(Boolean.$from('True'));
+        assert.isTrue(Boolean.$from('1'));
+        assert.isFalse(Boolean.$from('0'));
+        assert.isFalse(Boolean.$from('truee'));
+        assert.isFalse(Boolean.$from('false'));
 
-        expect(Boolean.$from(true)).to.be.true;
-        expect(Boolean.$from(false)).to.be.false;
+        assert.isTrue(Boolean.$from(0.1));
+        assert.isTrue(Boolean.$from(1));
+        assert.isTrue(Boolean.$from(-1));
+        assert.isTrue(Boolean.$from(1234567890n));
+        assert.isFalse(Boolean.$from(0));
+        assert.isFalse(Boolean.$from(0.0));
+        assert.isFalse(Boolean.$from(0n));
 
-        expect(Boolean.$from(null)).to.be.false;
-        expect(Boolean.$from(undefined)).to.be.false;
-        expect(Boolean.$from({})).to.be.false;
-        expect(Boolean.$from([])).to.be.false;
+        assert.isFalse(Boolean.$from(null));
+        assert.isFalse(Boolean.$from(undefined));
+        assert.isFalse(Boolean.$from({}));
+        assert.isFalse(Boolean.$from([]));
     });
 });

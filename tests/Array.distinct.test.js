@@ -1,17 +1,12 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
 require('../src/Array.distinct.js');
 
 describe('Array', () => {
     it('Array.prototype.$distinct', () => {
-        const plainArray = [1, 1, 2, 3];
-        expect(plainArray.$distinct().length).to.be.equal(3);
-
-        const complexArray = [{ id: 1 }, { id: 1 }, { id: 2 }, { id: 3 }];
-        expect(complexArray.$distinct((x, y) => x.id === y.id).length).to.be.equal(3);
-
-        const nanArray = [NaN, NaN, 0];
-        expect(nanArray.$distinct().length).to.be.equal(2);
+        assert.deepEqual([1, 1, 2].$distinct(), [1, 2]);
+        assert.deepEqual([{ id: 1 }, { id: 1 }, { id: 2 }].$distinct((a, b) => a.id === b.id), [{ id: 1 }, { id: 2 }]);
+        assert.deepEqual([NaN, NaN, 0].$distinct(), [NaN, 0]);
     });
 });

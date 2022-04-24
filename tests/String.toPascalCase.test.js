@@ -1,18 +1,18 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
 require('../src/String.toPascalCase.js');
 
 describe('String', () => {
     it('String.prototype.$toPascalCase', () => {
-        expect('fooBar'.$toPascalCase()).to.be.equals('FooBar');
-        expect('foo-bar'.$toPascalCase()).to.be.equals('FooBar');
-        expect('FooBar'.$toPascalCase()).to.be.equals('FooBar');
-        expect('FOO_BAR'.$toPascalCase()).to.be.equals('FooBar');
-        expect('foo_bar'.$toPascalCase()).to.be.equals('FooBar');
-        expect('foo bar'.$toPascalCase()).to.be.equals('FooBar');
-        expect('Foo Bar'.$toPascalCase()).to.be.equals('FooBar');
-        expect('foo.bar'.$toPascalCase()).to.be.equals('FooBar');
-        expect('--FOO-BAR--'.$toPascalCase()).to.be.equals('FooBar');
+        assert.equal('fooBar'.$toPascalCase(), 'FooBar');
+        assert.equal('foo-bar'.$toPascalCase(), 'FooBar');
+        assert.equal('FooBar'.$toPascalCase(), 'FooBar');
+        assert.equal('FOO_BAR'.$toPascalCase(), 'FooBar');
+        assert.equal('foo_bar'.$toPascalCase(), 'FooBar');
+        assert.equal('foo bar'.$toPascalCase(), 'FooBar');
+        assert.equal('Foo Bar'.$toPascalCase(), 'FooBar');
+        assert.equal('foo.bar'.$toPascalCase(), 'FooBar');
+        assert.equal('--FOO-BAR--'.$toPascalCase(), 'FooBar');
     });
 });

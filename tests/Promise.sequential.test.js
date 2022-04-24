@@ -1,4 +1,4 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
 require('../src/Promise.sequential.js');
@@ -13,9 +13,9 @@ describe('Promise', () => {
 
         Promise.$sequential(promises)
             .then((reses) => {
-                expect(reses).to.be.lengthOf(promiseCount);
-                expect(reses[promiseCount - 1]).to.be.equals(promiseResult);
-                expect(new Date().getTime() - promiseInterval * promiseCount).to.greaterThan(promiseStartTime.getTime() - 1);
+                assert.equal(reses.length, promiseCount);
+                assert.equal(reses[promiseCount - 1], promiseResult);
+                assert.isAbove(new Date().getTime() - promiseInterval * promiseCount, promiseStartTime.getTime() - 1);
                 return;
             })
             .catch(() => {

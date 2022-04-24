@@ -1,18 +1,18 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
 require('../src/String.toSnakeCase.js');
 
 describe('String', () => {
     it('String.prototype.$toSnakeCase', () => {
-        expect('fooBar'.$toSnakeCase()).to.be.equals('foo_bar');
-        expect('foo-bar'.$toSnakeCase()).to.be.equals('foo_bar');
-        expect('FooBar'.$toSnakeCase()).to.be.equals('foo_bar');
-        expect('FOO_BAR'.$toSnakeCase()).to.be.equals('foo_bar');
-        expect('foo_bar'.$toSnakeCase()).to.be.equals('foo_bar');
-        expect('foo bar'.$toSnakeCase()).to.be.equals('foo_bar');
-        expect('Foo Bar'.$toSnakeCase()).to.be.equals('foo_bar');
-        expect('foo.bar'.$toSnakeCase()).to.be.equals('foo_bar');
-        expect('--FOO-BAR--'.$toSnakeCase()).to.be.equals('foo_bar');
+        assert.equal('fooBar'.$toSnakeCase(), 'foo_bar');
+        assert.equal('foo-bar'.$toSnakeCase(), 'foo_bar');
+        assert.equal('FooBar'.$toSnakeCase(), 'foo_bar');
+        assert.equal('FOO_BAR'.$toSnakeCase(), 'foo_bar');
+        assert.equal('foo_bar'.$toSnakeCase(), 'foo_bar');
+        assert.equal('foo bar'.$toSnakeCase(), 'foo_bar');
+        assert.equal('Foo Bar'.$toSnakeCase(), 'foo_bar');
+        assert.equal('foo.bar'.$toSnakeCase(), 'foo_bar');
+        assert.equal('--FOO-BAR--'.$toSnakeCase(), 'foo_bar');
     });
 });

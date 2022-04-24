@@ -1,4 +1,4 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
 require('../src/Date.now.js');
@@ -8,11 +8,11 @@ describe('Date', () => {
         const date = new Date();
         const now = Date.$now();
 
-        expect(now.getFullYear()).to.be.equal(date.getFullYear());
-        expect(now.getMonth()).to.be.equal(date.getMonth());
-        expect(now.getDate()).to.be.equal(date.getDate());
-        expect(now.getHours()).to.be.equal(date.getHours());
-        expect(now.getMinutes()).to.be.equal(date.getMinutes());
-        expect(now.getSeconds()).to.be.equal(date.getSeconds());
+        assert.equal(now.getFullYear(), date.getFullYear());
+        assert.equal(now.getMonth(), date.getMonth());
+        assert.equal(now.getDate(), date.getDate());
+        assert.equal(now.getHours(), date.getHours());
+        assert.equal(now.getMinutes(), date.getMinutes());
+        assert.equal(now.getSeconds(), date.getSeconds());
     });
 });

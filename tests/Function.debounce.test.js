@@ -1,14 +1,15 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
 require('../src/Function.debounce.js');
 
 describe('Function', () => {
-    it('Function.$debounce', () => {
+    it('Function.$debounce', (done) => {
         let func = () => {
             debounceCount++;
-            expect(debounceCount).to.be.equals(1);
-            expect(new Date().getTime() - debounceInterval).to.greaterThan(debounceStartTime.getTime() - 1);
+            assert.equal(debounceCount, 1);
+            assert.isAbove(new Date().getTime() - debounceInterval, debounceStartTime.getTime() - 1);
+            done();
         };
         let debounceInterval = 1000;
         let debounceCount = 0;

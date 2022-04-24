@@ -1,4 +1,4 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
 require('../src/Promise.delay.js');
@@ -11,8 +11,8 @@ describe('Promise', () => {
 
         Promise.$delay(promiseInterval, promiseResult)
             .then((res) => {
-                expect(res).to.be.equals(promiseResult);
-                expect(new Date().getTime() - promiseInterval).to.greaterThan(promiseStartTime.getTime() - 1);
+                expect.equals(res, promiseResult);
+                assert.isAbove(new Date().getTime() - promiseInterval, promiseStartTime.getTime() - 1);
                 return;
             })
             .catch(() => {
