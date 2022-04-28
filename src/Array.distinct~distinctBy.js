@@ -7,11 +7,11 @@
                 throw new TypeError(comparerFn + ' is not a function');
             }
 
-            return Array.prototype.reduce.call(Object(this), (pre, cur) => {
-                if (!pre.some((e) => comparerFn.call(thisArg, cur, e))) {
-                    pre.push(cur);
+            return Array.prototype.reduce.call(Object(this), (acc, cur) => {
+                if (!acc.some((e) => comparerFn.call(thisArg, cur, e))) {
+                    acc.push(cur);
                 }
-                return pre;
+                return acc;
             }, []);
         },
         enumerable: false,

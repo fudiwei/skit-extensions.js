@@ -8,7 +8,7 @@ declare interface Array<T> {
     $distinct(comparerFn?: (a: T, b: T) => boolean, thisArg?: any): T[];
 
     /**
-     * 根据指定的键选择器函数返回数组中的不同元素。
+     * 根据指定的键返回数组中的不同元素。
      * @deprecated 即将被 ECMAScript 提案 Array.prototype.uniqueBy 取代。
      * @param {Function} [selector] （可选）指定键。
      * @returns {Array} 一个包含原数组中的非重复元素的新数组。

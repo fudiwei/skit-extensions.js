@@ -51,6 +51,7 @@ import '@skit/extensions';
     -   `Array.prototype.$fill`
     -   `Array.prototype.$findLast`
     -   `Array.prototype.$findLastIndex`
+    -   `Array.prototype.$groupBy`
     -   `Array.prototype.$insertAt`
     -   `Array.prototype.$max`
     -   `Array.prototype.$maxBy`

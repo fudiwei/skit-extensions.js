@@ -8,7 +8,7 @@ declare interface Array<T> {
     $min(comparerFn?: (a: T, b: T) => number, thisArg?: any): T | undefined;
 
     /**
-     * 根据指定的键选择器函数返回数组中的最小值。
+     * 根据指定的键返回数组中的最小值。
      * @param {Function} [selector] （可选）指定键。
      * @returns {Object} 数组中具有最小键的值。
      */
@@ -31,7 +31,7 @@ declare interface Array<T> {
     $max(comparerFn?: (a: T, b: T) => number, thisArg?: any): T | undefined;
 
     /**
-     * 根据指定的键选择器函数返回数组中的最大值。
+     * 根据指定的键返回数组中的最大值。
      * @param {Function} [selector] （可选）指定键。
      * @returns {Object} 数组中具有最大键的值。
      */
