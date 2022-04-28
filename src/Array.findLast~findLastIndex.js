@@ -20,8 +20,8 @@
     };
 
     Object.defineProperty(Array.prototype, '$findLast', {
-        value: function (predicate) {
-            const lastIndex = _lastIndexOf(this, predicate, arguments[1]);
+        value: function (predicate, thisArg) {
+            const lastIndex = _lastIndexOf(this, predicate, thisArg);
             if (lastIndex !== -1)
                 return this[lastIndex];
 
@@ -32,8 +32,8 @@
     });
 
     Object.defineProperty(Array.prototype, '$findLastIndex', {
-        value: function (predicate) {
-            return _lastIndexOf(this, predicate, arguments[1]);
+        value: function (predicate, thisArg) {
+            return _lastIndexOf(this, predicate, thisArg);
         },
         enumerable: false,
         configurable: false

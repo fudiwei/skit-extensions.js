@@ -3,6 +3,7 @@
 /// <reference path="./Array.fill.d.ts" />
 /// <reference path="./Array.findLast~findLastIndex.d.ts" />
 /// <reference path="./Array.insertAt~removeAt.d.ts" />
+/// <reference path="./Array.min~minBy~max~maxBy.d.ts" />
 /// <reference path="./Array.shuffle.d.ts" />
 /// <reference path="./Array.sort~sortAscBy~sortDescBy.d.ts" />
 /// <reference path="./Boolean.from.d.ts" />

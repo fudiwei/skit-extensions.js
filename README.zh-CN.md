@@ -52,6 +52,10 @@ import '@skit/extensions';
     -   `Array.prototype.$findLast`
     -   `Array.prototype.$findLastIndex`
     -   `Array.prototype.$insertAt`
+    -   `Array.prototype.$max`
+    -   `Array.prototype.$maxBy`
+    -   `Array.prototype.$min`
+    -   `Array.prototype.$minBy`
     -   `Array.prototype.$removeAt`
     -   `Array.prototype.$shuffle`
     -   `Array.prototype.$sortAsc`

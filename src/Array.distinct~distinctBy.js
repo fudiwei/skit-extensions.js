@@ -1,15 +1,13 @@
 (function () {
     Object.defineProperty(Array.prototype, '$distinct', {
-        value: function (comparerFn) {
+        value: function (comparerFn, thisArg) {
             if (comparerFn == null) {
                 comparerFn = (a, b) => Object.is(a, b);
             } else if (typeof comparerFn !== 'function') {
                 throw new TypeError(comparerFn + ' is not a function');
             }
 
-            const O = Object(this);
-            const thisArg = arguments[1];
-            return Array.prototype.reduce.call(O, (pre, cur) => {
+            return Array.prototype.reduce.call(Object(this), (pre, cur) => {
                 if (!pre.some((e) => comparerFn.call(thisArg, cur, e))) {
                     pre.push(cur);
                 }
@@ -21,13 +19,12 @@
     });
 
     Object.defineProperty(Array.prototype, '$distinctBy', {
-        value: function (selector) {
+        value: function (selector, thisArg) {
             if (selector == null)
                 return [...new Set(this)];
 
             const O = Object(this);
             const len = O.length >>> 0;
-            const thisArg = arguments[1];
 
             const map = new Map();
             for (let k = 0; k < len; k++) {
