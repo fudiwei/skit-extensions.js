@@ -1,6 +1,6 @@
 declare interface Array<T> {
     /**
-     * 使用指定的比较器比较每个元素，从序列中返回不同的元素。
+     * 使用指定的比较器比较每个元素，从数组中返回不同的元素。
      * @param {Function} [comparerFn] （可选）用于比较元素的函数。
      * @param {Object} [thisArg] （可选）执行 `comparerFn` 函数时值被用作 this。
      * @returns {Array} 一个包含原数组中的非重复元素的新数组。

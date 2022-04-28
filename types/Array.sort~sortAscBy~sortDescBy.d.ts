@@ -6,7 +6,7 @@ declare interface Array<T> {
      * @param {Object} [thisArg] （可选）执行 `comparerFn` 函数时值被用作 this。
      * @returns {Array} 排序后的数组。
      */
-    $sort(comparerFn?: (a: T, b: T) => boolean, thisArg?: any): T[];
+    $sort(comparerFn?: (a: T, b: T) => number, thisArg?: any): T[];
 
     /**
      * 根据键按升序对数组的元素进行排序，并返回排序后的数组。

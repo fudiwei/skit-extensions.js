@@ -68,18 +68,18 @@ Please refer to the declaration file in _/types/\*.d.ts_.
     -   `Date.$now`
     -   `Date.$today`
     -   `Date.$unix`
-    -   `Date.prototype.addMilliseconds`
-    -   `Date.prototype.addSeconds`
-    -   `Date.prototype.addMinutes`
-    -   `Date.prototype.addHours`
-    -   `Date.prototype.addDays`
-    -   `Date.prototype.addMonths`
-    -   `Date.prototype.addYears`
+    -   `Date.prototype.$addMilliseconds`
+    -   `Date.prototype.$addSeconds`
+    -   `Date.prototype.$addMinutes`
+    -   `Date.prototype.$addHours`
+    -   `Date.prototype.$addDays`
+    -   `Date.prototype.$addMonths`
+    -   `Date.prototype.$addYears`
     -   `Date.prototype.$format`
     -   `Date.prototype.$isToday`
     -   `Date.prototype.$isWeekend`
+    -   `Date.prototype.$midnight`
     -   `Date.prototype.$unix`
-    -   `Date.prototype.$zeroTime`
 
 -   Function:
 
