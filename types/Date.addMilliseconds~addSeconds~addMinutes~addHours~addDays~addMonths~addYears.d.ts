@@ -32,7 +32,7 @@ declare interface Date {
      * @param {Number} days 要添加的天数。
      * @returns {Date} 修改后的日期对象。
      */
-    $addHours(days: number): this;
+    $addDays(days: number): this;
 
     /**
      * 为一个日期对象添加指定的月数。

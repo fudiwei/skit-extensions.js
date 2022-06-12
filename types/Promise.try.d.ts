@@ -4,6 +4,6 @@ declare interface PromiseConstructor {
      * @param {Function} fn 待执行函数。
      * @returns {Promise} 一个 Promise 对象。
      */
-    $try<R = void>(fn: () => R): Promise<R>;
-    $try<R = void>(fn: (...args: any[]) => R): Promise<R>;
+    $try<T = void>(fn: () => T | PromiseLike<T>): Promise<T>;
+    $try<T = void>(fn: (...args: any[]) => T | PromiseLike<T>): Promise<T>;
 }
