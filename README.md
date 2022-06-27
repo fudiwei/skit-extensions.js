@@ -109,6 +109,8 @@ Please refer to the declaration file in _/types/\*.d.ts_.
     -   `Promise.$delay`
     -   `Promise.$sequential`
     -   `Promise.$try`
+    -   `Promise.$waitUntil`
+    -   `Promise.$waitWhile`
 
 -   String:
 

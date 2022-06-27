@@ -25,6 +25,7 @@
 /// <reference path="./Promise.delay.d.ts" />
 /// <reference path="./Promise.sequential.d.ts" />
 /// <reference path="./Promise.try.d.ts" />
+/// <reference path="./Promise.waitUntil~waitWhile.d.ts" />
 /// <reference path="./String.equals.d.ts" />
 /// <reference path="./String.reverse.d.ts" />
 /// <reference path="./String.toCamelCase.d.ts" />

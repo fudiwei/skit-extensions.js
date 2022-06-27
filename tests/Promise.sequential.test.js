@@ -7,7 +7,7 @@ describe('Promise', () => {
     it('Promise.$sequential', (done) => {
         assert.isFunction(Promise.$sequential);
 
-        let promiseInterval = 50;
+        let promiseInterval = 300;
         let promiseResult = { ret: true };
         let promiseCount = 10;
         let promiseStartTime = new Date();

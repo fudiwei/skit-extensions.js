@@ -109,6 +109,8 @@ import '@skit/extensions';
     -   `Promise.$delay`
     -   `Promise.$sequential`
     -   `Promise.$try`
+    -   `Promise.$waitUntil`
+    -   `Promise.$waitWhile`
 
 -   String:
 
