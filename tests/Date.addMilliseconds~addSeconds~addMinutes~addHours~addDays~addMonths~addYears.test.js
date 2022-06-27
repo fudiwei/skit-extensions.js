@@ -44,13 +44,30 @@ describe('Date', () => {
     it('Date.prototype.$addMonths', () => {
         assert.isFunction(Date.prototype.$addMonths);
         assert.deepStrictEqual(new Date('2020/01/31').$addMonths(1), new Date('2020/02/29'));
+        assert.deepStrictEqual(new Date('2020/01/31').$addMonths(2), new Date('2020/03/31'));
+        assert.deepStrictEqual(new Date('2020/01/31').$addMonths(6), new Date('2020/07/31'));
+        assert.deepStrictEqual(new Date('2020/01/31').$addMonths(12), new Date('2021/01/31'));
+        assert.deepStrictEqual(new Date('2020/01/31').$addMonths(18), new Date('2021/07/31'));
+        assert.deepStrictEqual(new Date('2020/01/31').$addMonths(20), new Date('2021/09/30'));
+        assert.deepStrictEqual(new Date('2020/01/31').$addMonths(24), new Date('2022/01/31'));
         assert.deepStrictEqual(new Date('2020/02/28').$addMonths(1), new Date('2020/03/28'));
         assert.deepStrictEqual(new Date('2020/12/31').$addMonths(1), new Date('2021/01/31'));
+        assert.deepStrictEqual(new Date('2022/06/30').$addMonths(-1), new Date('2022/5/30'));
+        assert.deepStrictEqual(new Date('2022/06/30').$addMonths(-2), new Date('2022/4/30'));
+        assert.deepStrictEqual(new Date('2022/06/30').$addMonths(-6), new Date('2021/12/30'));
+        assert.deepStrictEqual(new Date('2022/06/30').$addMonths(-12), new Date('2021/06/30'));
+        assert.deepStrictEqual(new Date('2022/06/30').$addMonths(-18), new Date('2020/12/30'));
+        assert.deepStrictEqual(new Date('2022/06/30').$addMonths(-20), new Date('2020/10/30'));
+        assert.deepStrictEqual(new Date('2022/06/30').$addMonths(-24), new Date('2020/06/30'));
     });
 
     it('Date.prototype.$addYears', () => {
         assert.isFunction(Date.prototype.$addYears);
         assert.deepStrictEqual(new Date('2020/01/31').$addYears(1), new Date('2021/01/31'));
+        assert.deepStrictEqual(new Date('2020/01/31').$addYears(2), new Date('2022/01/31'));
         assert.deepStrictEqual(new Date('2020/02/29').$addYears(1), new Date('2021/02/28'));
+        assert.deepStrictEqual(new Date('2020/02/29').$addYears(2), new Date('2022/02/28'));
+        assert.deepStrictEqual(new Date('2022/06/30').$addYears(-1), new Date('2021/06/30'));
+        assert.deepStrictEqual(new Date('2022/06/30').$addYears(-2), new Date('2020/06/30'));
     });
 });

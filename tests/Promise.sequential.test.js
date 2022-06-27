@@ -9,7 +9,7 @@ describe('Promise', () => {
 
         let promiseInterval = 300;
         let promiseResult = { ret: true };
-        let promiseCount = 10;
+        let promiseCount = 3;
         let promiseStartTime = new Date();
         let promises = new Array(promiseCount).fill(() => new Promise((resolve) => setTimeout(() => resolve(promiseResult), promiseInterval)));
 
