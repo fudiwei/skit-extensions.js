@@ -2,6 +2,18 @@
 
 ---
 
+## Release 0.3.0
+
+-   **Features**:
+
+    -   Added `Promise.$waitUntil` and `Promise.$waitWhile`.
+
+-   **Bug Fixes**:
+
+    -   Fixed `Date.prototype.$addMonths`.
+
+    -   Fixed missing TypeScript declaration.
+
 ## Release 0.2.0
 
 -   **Features**:
