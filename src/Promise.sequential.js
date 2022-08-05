@@ -1,9 +1,4 @@
 (function () {
-    if (Object.prototype.toString.call(Promise) !== '[object Function]') {
-        // `Promise` is not supported.
-        return;
-    }
-
     Object.defineProperty(Promise, '$sequential', {
         value: function (promiseFns) {
             return new Promise((resolve, reject) => {

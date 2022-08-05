@@ -1,9 +1,4 @@
 (function () {
-    if (Object.prototype.toString.call(Promise) !== '[object Function]') {
-        // `Promise` is not supported.
-        return;
-    }
-
     Object.defineProperty(Promise, '$waitUntil', {
         value: function (keepWaiting, result, interval = 0) {
             return new Promise((resolve, reject) => {

@@ -1,9 +1,4 @@
 (function () {
-    if (Object.prototype.toString.call(Promise) !== '[object Function]') {
-        // `Promise` is not supported.
-        return;
-    }
-
     Object.defineProperty(Promise, '$try', {
         value: function (fn) {
             if (typeof fn !== 'function')
