@@ -19,17 +19,7 @@
                 throw new TypeError('Method \'Date.prototype.$unix\' called on a non-date object');
             }
 
-            if (arguments.length === 0) {
-                return parseInt(this.getTime() / 1000);
-            } else {
-                const timestamp = arguments[0];
-                if (isNaN(timestamp) || Number.isNaN(timestamp)) {
-                    throw new TypeError(timestamp + ' is not a number');
-                }
-
-                this.setTime(timestamp * 1000);
-                return this;
-            }
+            return parseInt(this.getTime() / 1000);
         },
         enumerable: false,
         configurable: false
