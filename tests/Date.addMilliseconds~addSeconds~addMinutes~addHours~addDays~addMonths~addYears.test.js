@@ -1,3 +1,5 @@
+/// <reference path="../types/Date.addMilliseconds~addSeconds~addMinutes~addHours~addDays~addMonths~addYears.d.ts" />
+
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
 

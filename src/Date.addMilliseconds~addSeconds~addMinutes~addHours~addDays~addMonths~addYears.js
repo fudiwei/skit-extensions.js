@@ -7,14 +7,6 @@
         return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
     };
 
-    const _daysToYear = (year) => {
-        if (year % 1 !== 0) throw new TypeError();
-
-        let y = year - 1;
-        let cent = y / 100;
-        return parseInt(y * (365 * 4 + 1) / 4 - cent + cent / 4);
-    };
-
     const _guardCheckType = (target, method) => {
         if (!(target instanceof Date)) {
             throw new TypeError('Method \'' + method + '\' called on incompatible receiver ' + target);
@@ -29,8 +21,9 @@
                 throw new TypeError(milliseconds + ' is not a number');
             }
 
-            this.setMilliseconds(this.getMilliseconds() + milliseconds);
-            return this;
+            const date = new Date(this.getTime());
+            date.setMilliseconds(this.getMilliseconds() + milliseconds);
+            return date;
         },
         enumerable: false,
         configurable: false
@@ -99,10 +92,11 @@
             let days = map[m] - map[m - 1];
             if (d > days) d = days;
 
-            this.setDate(d);
-            this.setMonth(m - 1);
-            this.setFullYear(y);
-            return this;
+            const date = new Date(this.getTime());
+            date.setDate(d);
+            date.setMonth(m - 1);
+            date.setFullYear(y);
+            return date;
         },
         enumerable: false,
         configurable: false
@@ -128,10 +122,11 @@
 
             y = y + +(+years).toFixed();
 
-            this.setFullYear(y);
-            this.setMonth(m);
-            this.setDate(d);
-            return this;
+            const date = new Date(this.getTime());
+            date.setFullYear(y);
+            date.setMonth(m);
+            date.setDate(d);
+            return date;
         },
         enumerable: false,
         configurable: false
