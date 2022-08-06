@@ -2,6 +2,20 @@
 
 ---
 
+## Release 0.4.0
+
+-   **Features**:
+
+    -   Added support for return types of `Function.$debounce` and `Function.$throttle`.
+
+-   **Breaking Changes**:
+
+    -   Becomes incompatible with runtimes that do not support `Promise`.
+
+    -   Makes `Date.prototype.$unix` not change the value of this Date object.
+
+    -   Makes `Date.prototype.$addMilliseconds`, `Date.prototype.addSeconds`, `Date.prototype.addMinutes`, `Date.prototype.addHours`, `Date.prototype.addDays`, `Date.prototype.addMonths`, `Date.prototype.addYears` not change the value of this Date object.
+
 ## Release 0.3.0
 
 -   **Features**:
@@ -28,7 +42,7 @@
 
 -   **Breaking Changes**:
 
-    -   Renamed `Date.prototype.$zeroTime` to `Date.prototype.$midnight`.
+    -   Renames `Date.prototype.$zeroTime` to `Date.prototype.$midnight`.
 
 ## Release 0.1.0
 
