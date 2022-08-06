@@ -1,3 +1,5 @@
+/// <reference path="../types/Array.min~minBy~max~maxBy.d.ts" />
+
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
 

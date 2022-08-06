@@ -1,3 +1,5 @@
+/// <reference path="../types/Array.sort~sortAscBy~sortDescBy.d.ts" />
+
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
 

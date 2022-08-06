@@ -1,3 +1,5 @@
+/// <reference path="../types/Promise.delay.d.ts" />
+
 const { assert } = require('chai');
 const { describe, it } = require('mocha');
 
