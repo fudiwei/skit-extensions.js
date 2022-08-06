@@ -10,22 +10,29 @@
                 throw new RangeError('The first argument must be greater than 0');
             }
 
-            let timer = null;
+            let timer = null,
+                rejectQueue = [];
             return function () {
                 const ctx = this;
                 const args = arguments;
 
-                if (!!timer) {
-                    clearTimeout(timer);
+                return new Promise((resolve, reject) => {
+                    if (!!timer) {
+                        timer = clearTimeout(timer), null;
+
+                        let r;
+                        while (r = rejectQueue.shift()) {
+                            r(new Error('Operation is canceled.'));
+                        }
+                    }
 
                     timer = setTimeout(function () {
-                        fn.apply(ctx, args);
+                        rejectQueue.length = 0;
+                        resolve(fn.apply(ctx, args));
                     }, wait);
-                } else {
-                    timer = setTimeout(function () {
-                        fn.apply(ctx, args);
-                    }, wait);
-                }
+
+                    rejectQueue.push(reject);
+                });
             };
         },
         enumerable: false,

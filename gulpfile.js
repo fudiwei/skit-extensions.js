@@ -33,6 +33,7 @@ gulp.task('mocha', () => {
     return gulp
         .src(['tests/**/*.test.js'])
         .pipe(gulp$mocha({
+            timeout: 30000,
             reporter: 'spec'
         }));
 });
