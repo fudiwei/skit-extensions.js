@@ -2,6 +2,12 @@
 
 ---
 
+## Release 0.4.1
+
+-   **Bug Fixes**:
+
+    -   Fixed missing TypeScript declaration.
+
 ## Release 0.4.0
 
 -   **Features**:
