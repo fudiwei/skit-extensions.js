@@ -1,6 +1,6 @@
 (function () {
     const _isString = (obj) => {
-        return '[object String]' === Object.prototype.toString.call(obj);
+        return typeof obj === 'string' || obj instanceof String;
     };
 
     Object.defineProperty(String, '$equals', {
@@ -9,7 +9,7 @@
                 return false;
             }
 
-            return str1 == str2;
+            return str1.valueOf() === str2.valueOf();
         },
         enumerable: false,
         configurable: false
@@ -21,7 +21,7 @@
                 return false;
             }
 
-            return str1.toLowerCase() == str2.toLowerCase();
+            return str1.localeCompare(str2, undefined, { sensitivity: 'base' }) === 0;
         },
         enumerable: false,
         configurable: false
