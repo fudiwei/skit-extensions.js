@@ -21,7 +21,7 @@
         "js-tool",
         "javascript-tools"
     ],
-    "version": "0.4.1",
+    "version": "0.4.2",
     "author": "Fu Diwei",
     "main": "dist/index.min.js",
     "typings": "types/index.d.ts",

@@ -2,6 +2,12 @@
 
 ---
 
+## Release 0.4.2
+
+-   **Bug Fixes**:
+
+    -   Fixed `String.$equalsIgnoreCase`.
+
 ## Release 0.4.1
 
 -   **Bug Fixes**:
