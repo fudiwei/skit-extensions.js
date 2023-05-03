@@ -16,7 +16,7 @@
     Object.defineProperty(Date.prototype, '$unix', {
         value: function () {
             if (!(this instanceof Date)) {
-                throw new TypeError('Method \'Date.prototype.$unix\' called on a non-date object');
+                throw new TypeError('Illegal invocation');
             }
 
             return parseInt(this.getTime() / 1000);

@@ -9,7 +9,7 @@
 
     const _guardCheckType = (target, method) => {
         if (!(target instanceof Date)) {
-            throw new TypeError('Method \'' + method + '\' called on incompatible receiver ' + target);
+            throw new TypeError('Illegal invocation');
         }
     };
 
@@ -72,7 +72,7 @@
             if (isNaN(months) || Number.isNaN(months)) {
                 throw new TypeError(months + ' is not a number');
             } else if (months < -120000 || months > 120000) {
-                throw new RangeError('The first argument must must be between -120000 and 120000');
+                throw new RangeError('The first argument must be between -120000 and 120000');
             }
 
             let y, m, d;
@@ -109,7 +109,7 @@
             if (isNaN(years) || Number.isNaN(years)) {
                 throw new TypeError(years + ' is not a number');
             } else if (years < -10000 || years > 10000) {
-                throw new RangeError('The first argument must must be between -10000 and 10000');
+                throw new RangeError('The first argument must be between -10000 and 10000');
             }
 
             let y = this.getFullYear();

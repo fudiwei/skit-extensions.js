@@ -2,7 +2,7 @@
     Object.defineProperty(Date.prototype, '$midnight', {
         value: function () {
             if (!(this instanceof Date)) {
-                throw new TypeError('Method \'Date.prototype.$midnight\' called on incompatible receiver ' + this);
+                throw new TypeError('Illegal invocation');
             }
 
             const date = new Date(this);
