@@ -4,7 +4,7 @@ declare interface Array<T> {
      * @param {Function} [selector] （可选）指定键。
      * @returns {Object} 一个包含每个组及其键的投影的对象。
      */
-    $groupBy(selector?: number | keyof T | symbol): Record<typeof selector, T[]>;
+    $groupBy(selector?: keyof T | number | symbol): Record<typeof selector, T[]>;
 
     /**
      * 根据指定的键选择器函数对数组中的元素进行分组，并且从每个组及其键中创建结果值。
@@ -13,5 +13,5 @@ declare interface Array<T> {
      * @param {Object} [thisArg] （可选）执行 `selectorFn` 函数时值被用作 this。
      * @returns {Object} 一个包含每个组及其键的投影的对象。
      */
-    $groupBy<U extends keyof any>(selectorFn?: (value: T, index: number, array: T[]) => U, thisArg?: any): Record<U, T[]>;
+    $groupBy<U = any>(selectorFn?: (value: T, index: number, array: T[]) => U, thisArg?: any): Record<U, T[]>;
 }

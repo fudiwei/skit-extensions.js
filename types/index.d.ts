@@ -3,6 +3,7 @@
 /// <reference path="./Array.fill.d.ts" />
 /// <reference path="./Array.findLast~findLastIndex.d.ts" />
 /// <reference path="./Array.groupBy.d.ts" />
+/// <reference path="./Array.groupByToMap.d.ts" />
 /// <reference path="./Array.insertAt~removeAt.d.ts" />
 /// <reference path="./Array.min~minBy~max~maxBy.d.ts" />
 /// <reference path="./Array.shuffle.d.ts" />
