@@ -1,7 +1,7 @@
 {
     "name": "@skit/extensions",
     "title": "extensions.js",
-    "description": "A powerful JavaScript utility library for built-in object extensions. 一个多功能的 JavaScript 内置对象原型链扩展方法工具库。",
+    "description": "一个多功能的 JavaScript 内置对象原型链扩展方法工具库。 A powerful JavaScript utility library for built-in object extensions.",
     "keywords": [
         "prototype",
         "extension",
@@ -21,7 +21,7 @@
         "js-tool",
         "javascript-tools"
     ],
-    "version": "0.4.2",
+    "version": "0.5.0",
     "author": "Fu Diwei",
     "main": "dist/index.min.js",
     "typings": "types/index.d.ts",
@@ -36,7 +36,8 @@
         "test": "gulp mocha",
         "build": "pnpm run build:both",
         "build:min": "gulp dist --outputFiles=min",
-        "build:both": "gulp dist --outputFiles=both"
+        "build:both": "gulp dist --outputFiles=both",
+        "prepublishOnly": "pnpm run build"
     },
     "files": [
         "src/*",

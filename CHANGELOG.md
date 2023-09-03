@@ -2,6 +2,20 @@
 
 ---
 
+## Release 0.5.0
+
+-   **Features**:
+
+    -   Added `Function.$noop`.
+
+    -   Added `Object.$deepEquals`.
+
+    -   Added `Array.prototype.$groupByToMap`.
+
+-   **Breaking Changes**:
+
+    -   The returned Promise will not be rejected in `Function.$debounce` and `Function.$throttle`.
+
 ## Release 0.4.2
 
 -   **Bug Fixes**:

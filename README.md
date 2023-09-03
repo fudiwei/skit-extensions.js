@@ -5,43 +5,44 @@
 [![Build Status](https://travis-ci.org/fudiwei/skit-extensions.js.svg?branch=master)](https://travis-ci.org/fudiwei/skit-extensions.js)
 [![License](https://img.shields.io/github/license/fudiwei/skit-extensions.js)](https://mit-license.org/)
 
-A powerful JavaScript utility library for built-in object extensions.
+一个多功能的 JavaScript 内置对象原型链扩展方法工具库。
 
-（[中文文档](./README.zh-CN.md)）
-
----
-
-## Features
-
--   Deliveries several common extended methods to some built-in objects (All APIs are designed to be named starting with `$` and are not enumerable, so you don't need to worry about forward compatibility with the ECMAScript standard).
-
--   Independent modularity.
-
--   Supports TypeScript.
+-   中文文档
+-   [English Documentation](./README.en-US.md)
 
 ---
 
-## Usage
+## 特性
 
-### Install:
+-   对部分内置对象扩展了若干常用原型链方法（所有 API 均被设计为以 `$` 开头、且不可枚举，无需担心与 ECMAScript 标准的向前兼容问题）；
+
+-   各模块相互独立，可单独拷贝到项目中使用；
+
+-   支持 TypeScript。
+
+---
+
+## 用法
+
+### 安装：
 
 ```shell
 npm install @skit/extensions
 ```
 
-### Import:
+### 导入：
 
 ```javascript
-/* use `require` */
+/* 使用 `require` 导入 */
 require('@skit/extensions');
 
-/* use `import` */
+/* 使用 `import` 导入 */
 import '@skit/extensions';
 ```
 
 ### API:
 
-Please refer to the declaration file in _/types/\*.d.ts_.
+请参考 _/types/\*.d.ts_ 下的声明文件。
 
 -   Array:
 
@@ -52,6 +53,7 @@ Please refer to the declaration file in _/types/\*.d.ts_.
     -   `Array.prototype.$findLast`
     -   `Array.prototype.$findLastIndex`
     -   `Array.prototype.$groupBy`
+    -   `Array.prototype.$groupByToMap`
     -   `Array.prototype.$insertAt`
     -   `Array.prototype.$max`
     -   `Array.prototype.$maxBy`
@@ -88,6 +90,7 @@ Please refer to the declaration file in _/types/\*.d.ts_.
 
 -   Function:
 
+    -   `Function.$noop`
     -   `Function.$debounce`
     -   `Function.$throttle`
 
@@ -102,6 +105,7 @@ Please refer to the declaration file in _/types/\*.d.ts_.
 
 -   Object:
 
+    -   `Object.$deepEquals`
     -   `Object.$merge`
 
 -   Promise:
@@ -123,6 +127,6 @@ Please refer to the declaration file in _/types/\*.d.ts_.
 
 ---
 
-## Changelog
+## 更新记录
 
-Please view the [CHANGELOG](./CHANGELOG.md) for details.
+请参阅 [CHANGELOG](./CHANGELOG.md)。
