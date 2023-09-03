@@ -21,6 +21,7 @@
 /// <reference path="./Number.isNumeric.d.ts" />
 /// <reference path="./Number.isOdd~isEven.d.ts" />
 /// <reference path="./Number.toFloor~toCeil~toRound.d.ts" />
+/// <reference path="./Object.deepEquals.d.ts" />
 /// <reference path="./Object.merge.d.ts" />
 /// <reference path="./Promise.delay.d.ts" />
 /// <reference path="./Promise.sequential.d.ts" />

@@ -5,7 +5,8 @@
                 throw new TypeError('Illegal invocation');
             }
 
-            return this.getDay() % 7 === 0 || this.getDay() % 7 === 6;
+            const r = this.getDay() % 7;
+            return r === 0 || r === 6;
         },
         enumerable: false,
         configurable: false
