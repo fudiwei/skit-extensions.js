@@ -12,8 +12,7 @@
 
             let timer = null,
                 remaining = 0,
-                previous = new Date(),
-                rejectQueue = [];
+                previous = new Date();
 
             return function () {
                 let now = new Date();
@@ -22,28 +21,19 @@
                 const ctx = this;
                 const args = arguments;
 
-                return new Promise((resolve, reject) => {
+                return new Promise((resolve) => {
                     if (remaining >= wait) {
                         previous = now;
-                        rejectQueue.length = 0;
                         resolve(fn.apply(ctx, args));
                     } else {
                         if (!!timer) {
                             timer = clearTimeout(timer), null;
-
-                            let r;
-                            while (r = rejectQueue.shift()) {
-                                r(new Error('Operation is canceled.'));
-                            }
                         }
 
                         timer = setTimeout(function () {
                             previous = new Date();
-                            rejectQueue.length = 0;
                             resolve(fn.apply(ctx, args));
                         }, wait - remaining);
-
-                        rejectQueue.push(reject);
                     }
                 });
             };

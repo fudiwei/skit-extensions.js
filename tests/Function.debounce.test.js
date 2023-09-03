@@ -18,7 +18,6 @@ describe('Function', () => {
         let debounceInterval = 1000;
         let debounceCount = 0;
         let debounceFulfilledAccumulator = 0;
-        let debounceRejectedAccumulator = 0;
         let debounceStartTime = new Date();
         let debounceString = 'bingo';
         let debounceFunc = Function.$debounce(func, debounceInterval);
@@ -28,29 +27,22 @@ describe('Function', () => {
         debounceFunc(debounceString).then((res) => {
             debounceFulfilledAccumulator++;
             assert.strictEqual(debounceString, res);
-        }).catch(() => {
-            debounceRejectedAccumulator++;
         });
 
         debounceFunc(debounceString).then((res) => {
             debounceFulfilledAccumulator++;
             assert.strictEqual(debounceString, res);
-        }).catch(() => {
-            debounceRejectedAccumulator++;
         });
 
         setTimeout(() => {
             debounceFunc(debounceString).then((res) => {
                 debounceFulfilledAccumulator++;
                 assert.strictEqual(debounceString, res);
-            }).catch(() => {
-                debounceRejectedAccumulator++;
             });
         }, debounceInterval / 2);
 
         setTimeout(() => {
             assert.strictEqual(debounceFulfilledAccumulator, 1);
-            assert.strictEqual(debounceRejectedAccumulator, 2);
             done();
         }, debounceInterval * 2);
     });
