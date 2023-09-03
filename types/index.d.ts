@@ -16,6 +16,7 @@
 /// <reference path="./Date.now.d.ts" />
 /// <reference path="./Date.today.d.ts" />
 /// <reference path="./Date.unix.d.ts" />
+/// <reference path="./Function.noop.d.ts" />
 /// <reference path="./Function.debounce.d.ts" />
 /// <reference path="./Function.throttle.d.ts" />
 /// <reference path="./Number.isNumeric.d.ts" />
