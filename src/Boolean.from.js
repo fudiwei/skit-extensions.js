@@ -7,15 +7,15 @@
                 }
 
                 if (typeof flag === 'string') {
-                    return flag.toLowerCase() === 'true' || flag === '1';
+                    return flag == 'TRUE' || flag == 'True' || flag == 'true' || flag == '1';
                 }
 
                 if (typeof flag === 'number') {
-                    return !isNaN(flag) && flag !== 0;
+                    return !isNaN(flag) && flag != 0;
                 }
 
                 if (typeof flag === 'bigint') {
-                    return flag !== BigInt(0);
+                    return flag != BigInt(0);
                 }
             }
 

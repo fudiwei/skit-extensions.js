@@ -14,10 +14,13 @@ describe('Boolean', () => {
 
         assert.isTrue(Boolean.$from('true'));
         assert.isTrue(Boolean.$from('True'));
+        assert.isTrue(Boolean.$from('TRUE'));
         assert.isTrue(Boolean.$from('1'));
-        assert.isFalse(Boolean.$from('0'));
+        assert.isFalse(Boolean.$from('tRUE'));
+        assert.isFalse(Boolean.$from('-1'));
         assert.isFalse(Boolean.$from('truee'));
         assert.isFalse(Boolean.$from('false'));
+        assert.isFalse(Boolean.$from('0'));
 
         assert.isTrue(Boolean.$from(0.1));
         assert.isTrue(Boolean.$from(1));
