@@ -13,7 +13,7 @@ declare interface Array<T> {
      * @param {Function} [selector] （可选）指定键。
      * @returns {Array} 一个包含原数组中的非重复元素的新数组。
      */
-    $distinctBy(selector?: number | keyof T | symbol): T[];
+    $distinctBy(selector?: keyof T | number | symbol): T[];
 
     /**
      * 根据指定的键选择器函数返回数组中的不同元素。

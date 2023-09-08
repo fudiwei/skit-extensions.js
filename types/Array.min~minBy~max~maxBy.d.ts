@@ -12,7 +12,7 @@ declare interface Array<T> {
      * @param {Function} [selector] （可选）指定键。
      * @returns {Object} 数组中具有最小键的值。
      */
-    $minBy(selector?: number | keyof T | symbol): T | undefined;
+    $minBy(selector?: keyof T | number | symbol): T | undefined;
 
     /**
      * 根据指定的键选择器函数返回数组中的最小值。
@@ -35,7 +35,7 @@ declare interface Array<T> {
      * @param {Function} [selector] （可选）指定键。
      * @returns {Object} 数组中具有最大键的值。
      */
-    $maxBy(selector?: number | keyof T | symbol): T | undefined;
+    $maxBy(selector?: keyof T | number | symbol): T | undefined;
 
     /**
      * 根据指定的键选择器函数返回数组中的最大值。

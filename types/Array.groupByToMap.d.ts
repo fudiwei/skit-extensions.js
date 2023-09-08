@@ -4,7 +4,7 @@ declare interface Array<T> {
      * @param {Function} [selector] （可选）指定键。
      * @returns {Object} 一个包含每个组及其键的投影的 Map。
      */
-    $groupByToMap(selector?: keyof T | number | symbol): Map<typeof selector, T[]>;
+    $groupByToMap(selector?: keyof T | number | symbol): Map<NonNullable<typeof selector>, T[]>;
 
     /**
      * 根据指定的键对数组中的元素进行分组，并且从每个组及其键中创建结果值。
@@ -13,7 +13,7 @@ declare interface Array<T> {
      * @param {Object} [thisArg] （可选）执行 `comparerFn` 函数时值被用作 this。
      * @returns {Object} 一个包含每个组及其键的投影的 Map。
      */
-    $groupByToMap(selector?: keyof T | number | symbol, comparerFn?: (a: T, b: T) => bool, thisArg?: any): Map<typeof selector, T[]>;
+    $groupByToMap(selector?: keyof T | number | symbol, comparerFn?: (a: T, b: T) => boolean, thisArg?: any): Map<NonNullable<typeof selector>, T[]>;
 
     /**
      * 根据指定的键选择器函数对数组中的元素进行分组，并且从每个组及其键中创建结果值。
@@ -30,5 +30,5 @@ declare interface Array<T> {
      * @param {Object} [thisArg] （可选）执行 `selectorFn`、`comparerFn` 函数时值被用作 this。
      * @returns {Object} 一个包含每个组及其键的投影的 Map。
      */
-    $groupByToMap<U = any>(selectorFn?: (value: T, index: number, array: T[]) => U, comparerFn?: (a: U, b: U) => bool, thisArg?: any): Map<U, T[]>;
+    $groupByToMap<U = any>(selectorFn?: (value: T, index: number, array: T[]) => U, comparerFn?: (a: U, b: U) => boolean, thisArg?: any): Map<U, T[]>;
 }

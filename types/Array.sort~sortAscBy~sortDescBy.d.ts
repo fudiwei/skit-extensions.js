@@ -14,7 +14,7 @@ declare interface Array<T> {
      * @param {String} [selector] （可选）指定键。
      * @returns {Array} 排序后的数组。
      */
-    $sortAscBy(selector?: number | keyof T | symbol): T[];
+    $sortAscBy(selector?: keyof T | number | symbol): T[];
 
     /**
      * 根据指定的键选择器函数按升序对数组的元素进行排序，并返回排序后的数组。
@@ -31,7 +31,7 @@ declare interface Array<T> {
      * @param {String} [selector] （可选）指定键。
      * @returns {Array} 排序后的数组。
      */
-    $sortDescBy(selector?: number | keyof T | symbol): T[];
+    $sortDescBy(selector?: keyof T | number | symbol): T[];
 
     /**
      * 根据指定的键选择器函数按降序对数组的元素进行排序。
