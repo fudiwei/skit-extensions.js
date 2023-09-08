@@ -2,6 +2,14 @@
 
 ---
 
+## Release 0.5.1
+
+-   **Bug Fixes**:
+
+    -   Fixed incorrect return value of `Boolean.from`.
+
+    -   Fixed TypeScript declarations.
+
 ## Release 0.5.0
 
 -   **Features**:
@@ -26,7 +34,7 @@
 
 -   **Bug Fixes**:
 
-    -   Fixed missing TypeScript declaration.
+    -   Fixed TypeScript declarations.
 
 ## Release 0.4.0
 
@@ -52,7 +60,7 @@
 
     -   Fixed `Date.prototype.$addMonths`.
 
-    -   Fixed missing TypeScript declaration.
+    -   Fixed TypeScript declarations.
 
 ## Release 0.2.0
 
@@ -64,7 +72,7 @@
 
 -   **Bug Fixes**:
 
-    -   Fixed missing TypeScript declaration.
+    -   Fixed TypeScript declarations.
 
 -   **Breaking Changes**:
 
