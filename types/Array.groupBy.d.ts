@@ -13,5 +13,5 @@ declare interface Array<T> {
      * @param {Object} [thisArg] （可选）执行 `selectorFn` 函数时值被用作 this。
      * @returns {Object} 一个包含每个组及其键的投影的对象。
      */
-    $groupBy<U extends keyof U | number | symbol = any>(selectorFn?: (value: T, index: number, array: T[]) => U, thisArg?: any): Record<U, T[]>;
+    $groupBy<U extends string | number | symbol = any>(selectorFn?: (value: T, index: number, array: T[]) => U, thisArg?: any): Record<U, T[]>;
 }
