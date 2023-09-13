@@ -2,6 +2,12 @@
 
 ---
 
+## Release 0.5.2
+
+-   **Bug Fixes**:
+
+    -   Fixed TypeScript declarations.
+
 ## Release 0.5.1
 
 -   **Bug Fixes**:
